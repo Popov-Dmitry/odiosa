@@ -2,7 +2,7 @@
 @tailwind utilities;
 
 :root {
-  --foreground: #171717;
+  --foreground: #474747;
   --font-johnstemp: 'johnstemp', sans-serif;
 }
 
@@ -11,4 +11,5 @@ body {
   background-size: auto 100%;
   color: var(--foreground);
   font-family: var(--font-johnstemp);
+  font-weight: 500;
 }
