@@ -15,7 +15,7 @@ const johnstemp = localFont({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${johnstemp.variable} antialiased`}>
+    <html lang="en" className={`${johnstemp.variable}`}>
       <Header />
       <body>
         {children}
