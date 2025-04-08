@@ -1,12 +1,14 @@
 @import "tailwindcss";
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
   --foreground: #171717;
+  --font-johnstemp: 'johnstemp', sans-serif;
 }
 
 body {
-  background: var(--background);
+  background: url("/background.png") repeat 0 0;
+  background-size: auto 100%;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-johnstemp);
 }
