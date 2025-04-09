@@ -11,20 +11,27 @@ const Footer = () => {
   const { isMobile } = useResponsive()
 
   return (
-    <div className="relative pb-9">
+    <div className="relative pb-9 lg:grid lg:grid-cols-2">
       <div className="absolute top-0 left-0 right-0 lg:hidden -z-10">
         <div className="relative w-full h-[142px]">
           <Image src="/footer-mobile.png" alt="" fill />
         </div>
       </div>
-      <div className="pt-10 pl-3 pr-2">
-        <div className="text-[26px] uppercase">
+      <div className="pt-10 pl-3 pr-2 lg:px-10">
+        <div className="text-[26px] uppercase lg:text-2xl">
           Newsletter
         </div>
-        <Input placeholder="Email" className="mt-10" />
-        <Button text="Subscribe" variant={isMobile ? "primary" : "secondary"} className="mt-2.5" />
+        <div className="flex flex-col gap-2.5 mt-10 lg:grid lg:grid-cols-2 lg:gap-4 lg:mt-2.5">
+          <Input placeholder="Email" className="lg:self-end" />
+          <Button
+            text="Subscribe"
+            variant={isMobile ? "primary" : "secondary"}
+            className="lg:!h-20 lg:!text-2xl"
+            imageClassName="lg:!h-20"
+          />
+        </div>
       </div>
-      <div className="mt-[58px] pl-3 pr-2">
+      <div className="mt-[58px] pl-3 pr-2 lg:hidden">
         <div className="relative w-full h-4">
           <Image src="/fotter-line-1.png" alt="" fill />
         </div>
@@ -49,10 +56,27 @@ const Footer = () => {
           <Image src="/fotter-line-2.png" alt="" fill />
         </div>
       </div>
-      <div className="mt-6 pl-4 pr-3 grid grid-cols-3 gap-2 w-full text-xl">
-        <Link href="/">Privacy</Link>
-        <Link href="/" className="text-center">Cookies</Link>
-        <Link href="/" className="text-end">Terms</Link>
+      <div className="grid lg:grid-cols-3 lg:gap-20 text-2xl">
+        <div className="hidden lg:flex lg:gap-5">
+          <div>Contacts:</div>
+          <div className="flex flex-col mt-[28px]">
+            <Link href="/">info@odiosa.ru</Link>
+            <Link href="/">Instagram</Link>
+          </div>
+        </div>
+        <div className="hidden lg:flex lg:gap-5">
+          <div>Concept Stores:</div>
+          <div className="flex flex-col mt-[28px]">
+            <Link href="/">C-Store</Link>
+            <Link href="/">Store con</Link>
+            <Link href="/">Osa Store</Link>
+          </div>
+        </div>
+        <div className="mt-6 pl-4 pr-3 grid grid-cols-3 gap-2 w-full text-xl lg:text-2xl lg:flex lg:flex-col">
+          <Link href="/">Privacy</Link>
+          <Link href="/" className="text-center lg:text-start">Cookies</Link>
+          <Link href="/" className="text-end lg:text-start">Terms</Link>
+        </div>
       </div>
     </div>
   );

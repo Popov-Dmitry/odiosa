@@ -1,18 +1,29 @@
 @import "tailwindcss";
+
 @tailwind utilities;
 
 :root {
-  --foreground: #474747;
-  --font-johnstemp: 'johnstemp', sans-serif;
+    --foreground: #474747;
+    --font-johnstemp: 'johnstemp', sans-serif;
 }
 
 body {
-  background: url("/background.png") repeat 0 0;
-  color: var(--foreground);
-  font-family: var(--font-johnstemp);
-  font-weight: 500;
+    background: url("/background.png") repeat 0 0;
+    color: var(--foreground);
+    font-family: var(--font-johnstemp);
+    font-weight: 500;
 }
 
 a {
-  text-decoration: underline;
+    text-decoration: underline;
+
+    @media (width >= 64rem) {
+        text-decoration: none;
+    }
+}
+
+a:hover {
+    @media (width >= 64rem) {
+        text-decoration: underline;
+    }
 }
