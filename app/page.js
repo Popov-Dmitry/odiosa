@@ -5,7 +5,7 @@ import Button from "@/components/button";
 export default function Home() {
   return (
     <>
-      <div className="mt-[30px] mb-[60px]">
+      <div className="mt-[110px] lg:mt-[126px] mb-[60px]">
         <div className="relative overflow-hidden">
           <div>
             <div className="px-2.5 text-[26px] lg:text-[36px] tracking-tighter">
