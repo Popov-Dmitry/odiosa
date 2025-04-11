@@ -42,7 +42,7 @@ export default function Home() {
               evolution.
             </div>
             <div className="relative w-[511px] h-[580px] overflow-hidden mt-2.5">
-              <Image src="/catenatia-spinosa-mobile.png" alt="Catenatia Spinosa" fill className="object-cover" />
+              <Image src="/catenatia-spinosa-mobile.png" alt="Catenatia Spinosa" fill className="object-cover" quality={100} />
             </div>
             <div className="text-xl px-2.5">Nazvanie Pugovici, Pash</div>
           </div>
