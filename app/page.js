@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <div className="pt-[110px] lg:pt-[126px] pb-[60px]">
-        <div className="lg:hidden">
+        <div className="lg:hidden overflow-hidden">
           <div className="relative overflow-hidden">
             <div>
               <div className="px-2.5 text-[26px] tracking-tighter">
