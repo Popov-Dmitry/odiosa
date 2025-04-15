@@ -39,7 +39,7 @@ const Footer = () => {
           <div>
             <div className="uppercase text-[26px]">Contacts</div>
             <div className="flex flex-col text-xl mt-10">
-              <Link href="/">info@odiosa.ru</Link>
+              <a href="mailto:Info@odiosa.eu">Info@odiosa.eu</a>
               <Link href="/">Instagram</Link>
             </div>
           </div>
@@ -60,7 +60,7 @@ const Footer = () => {
         <div className="hidden lg:flex lg:flex-col xl:flex-row xl:gap-5">
           <div>Contacts:</div>
           <div className="flex flex-col xl:mt-[28px] lg:ml-10 xl:ml-0">
-            <Link href="/">info@odiosa.ru</Link>
+            <a href="mailto:Info@odiosa.eu">Info@odiosa.eu</a>
             <Link href="/">Instagram</Link>
           </div>
         </div>
