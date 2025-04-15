@@ -20,7 +20,7 @@ const HeaderMenu = () => {
         className="cursor-pointer absolute top-1/2 right-4 -translate-y-1/2 lg:hidden"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <Image src="/menu.svg" alt="menu" width={30} height={25} />
+        <Image src="/menu.png" alt="menu" width={30} height={25} />
       </button>
       <div className={clsx(
         "fixed top-16 left-0 z-[9999] w-full py-4 flex flex-col gap-4 text-2xl px-4 text-center bg-[var(--background)] duration-200",

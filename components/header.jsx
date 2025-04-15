@@ -15,7 +15,7 @@ const Header = () => {
           <Link href="/">Contacts</Link>
         </div>
         <Image
-          src="/logo.svg"
+          src="/logo.png"
           alt="odiosa"
           width={72}
           height={21}
