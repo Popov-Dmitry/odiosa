@@ -11,7 +11,7 @@ const Footer = () => {
   const { isMobile } = useResponsive()
 
   return (
-    <div className="relative pb-9 lg:grid lg:grid-cols-2">
+    <div className="relative pb-9 lg:grid lg:grid-cols-2 text-shadow-[0_0_1.5px_#000000B2] lg:text-shadow-[0_0_2px_#000000B2]">
       <div className="absolute top-0 left-0 right-0 lg:hidden -z-10">
         <div className="relative w-full h-[142px]">
           <Image src="/footer-mobile.png" alt="" fill />
