@@ -1,6 +1,7 @@
 import "./globals.css";
 import localFont from "next/font/local";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 export const metadata = {
   title: "Odiosa"
@@ -16,8 +17,8 @@ const johnstemp = localFont({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${johnstemp.variable}`}>
-      <Header />
       <body className="relative">
+      <Header />
         <div
           className="absolute inset-0 z-0 opacity-80 mix-blend-multiply pointer-events-none"
           style={{
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
         <main className="relative z-10">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );
