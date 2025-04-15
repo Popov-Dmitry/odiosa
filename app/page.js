@@ -239,7 +239,7 @@ export default function Home() {
             </div>
           </div>
           <div className="grid grid-cols-2 items-center gap-8 px-10">
-            <div className="relative w-full h-[370px]">
+            <div className="relative max-h-[370px] max-w-full aspect-[940/370]">
               <Image src="/pieces.png" alt="Pieces" fill quality={100} />
             </div>
             <Button text="WATCH COLLECTION" />
