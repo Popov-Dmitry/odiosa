@@ -18,7 +18,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="pt-10 pl-3 pr-2 lg:px-10">
-        <div className="text-[26px] uppercase lg:text-2xl">
+        <div className="text-[26px] uppercase lg:text-2xl lg:normal-case">
           Newsletter
         </div>
         <div className="flex flex-col gap-2.5 mt-10 lg:grid lg:grid-cols-2 lg:gap-4 lg:mt-2.5">

@@ -11,7 +11,7 @@ const Input = ({ value, onChange, placeholder, disabled, className }) => {
   return (
     <div className={className}>
       <input
-        className={clsx("w-full outline-0 placeholder:opacity-60", isMobile ? "text-xl text-center" : "text-2xl")}
+        className={clsx("w-full outline-0 placeholder:opacity-100", isMobile ? "text-xl text-center" : "text-2xl")}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
