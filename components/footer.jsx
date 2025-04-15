@@ -14,7 +14,7 @@ const Footer = () => {
     <div className="relative pb-9 lg:grid lg:grid-cols-2 text-shadow-[0_0_1.5px_#000000B2] lg:text-shadow-[0_0_2px_#000000B2]">
       <div className="absolute top-0 left-0 right-0 lg:hidden -z-10">
         <div className="relative w-full h-[142px]">
-          <Image src="/footer-mobile.png" alt="" fill />
+          <Image src="/footer-mobile.webp" alt="" fill />
         </div>
       </div>
       <div className="pt-10 pl-3 pr-2 lg:px-10">
@@ -33,7 +33,7 @@ const Footer = () => {
       </div>
       <div className="mt-[58px] pl-3 pr-2 lg:hidden">
         <div className="relative w-full h-4">
-          <Image src="/fotter-line-1.png" alt="" fill />
+          <Image src="/fotter-line-1.webp" alt="" fill />
         </div>
         <div className="flex justify-between mt-2.5">
           <div>
@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="relative w-full h-4 mt-[18px]">
-          <Image src="/fotter-line-2.png" alt="" fill />
+          <Image src="/fotter-line-2.webp" alt="" fill />
         </div>
       </div>
       <div className="grid lg:grid-cols-3 lg:gap-20 text-2xl">

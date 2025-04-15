@@ -18,7 +18,7 @@ const Input = ({ value, onChange, placeholder, disabled, className }) => {
         disabled={disabled}
       />
       <div className={clsx("relative w-full mt-2.5", isMobile ? "h-[9px]" : "h-1.5")}>
-        <Image src={isMobile ? "/input-mobile.png" : "/input-desktop.png"} alt="" fill />
+        <Image src={isMobile ? "/input-mobile.webp" : "/input-desktop.webp"} alt="" fill />
       </div>
     </div>
   );

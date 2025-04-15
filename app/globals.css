@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-    --background: #eeefea;
+    --background: #f4f2ef;
     --foreground: #474747;
     --font-johnstemp: 'johnstemp', sans-serif;
 }

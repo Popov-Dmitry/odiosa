@@ -22,7 +22,7 @@ export default function Home() {
           <div className="absolute top-[94px] left-2.5 w-[638px] h-[1000px] overflow-hidden -z-10">
             <div className="relative w-[638px] h-[1000px] overflow-hidden">
               <Image
-                src="/catocala-kotshubeji-mobile.png"
+                src="/catocala-kotshubeji-mobile.webp"
                 alt="Catocala Kotshubeji"
                 fill
                 className="object-cover"
@@ -46,7 +46,7 @@ export default function Home() {
           </div>
           <div className="relative w-[511px] h-[580px] overflow-hidden mt-2.5">
             <Image
-              src="/catenatia-spinosa-mobile.png"
+              src="/catenatia-spinosa-mobile.webp"
               alt="Catenatia Spinosa"
               fill
               className="object-cover"
@@ -70,7 +70,7 @@ export default function Home() {
             <div className="absolute top-0 -left-2 w-[432px] min-h-[1131px] overflow-hidden -z-10">
               <div className="relative min-w-[432px] min-h-[1131px] overflow-hidden">
                 <Image
-                  src="/vincula-eprantium-mobile.png"
+                  src="/vincula-eprantium-mobile.webp"
                   alt="Vincula Eprantium"
                   fill
                   className="object-cover"
@@ -90,7 +90,7 @@ export default function Home() {
             <div className="absolute top-0 h-[929px] w-[374px] overflow-hidden -z-10">
               <div className="mt-2 relative w-[374px] h-[929px] overflow-hidden">
                 <Image
-                  src="/cryophora-lgnis-mobile.png"
+                  src="/cryophora-lgnis-mobile.webp"
                   alt="Cryophora Lgnis"
                   fill
                   quality={100}
@@ -111,7 +111,7 @@ export default function Home() {
           <div className="flex justify-center px-2.5">
             <div className="relative w-[412px] h-[162px]">
               <Image
-                src="/pieces.png"
+                src="/pieces.webp"
                 alt="Pieces"
                 fill
                 quality={100}
@@ -133,7 +133,7 @@ export default function Home() {
             <div className="absolute -z-10">
               <div className="relative w-[372px] h-[704px]">
                 <Image
-                  src="/watch-collection.png"
+                  src="/watch-collection.webp"
                   alt="Watch Collection"
                   fill
                   quality={100}
@@ -182,7 +182,7 @@ export default function Home() {
           </div>
           <div className="absolute left-0 top-0 w-full overflow-hidden -z-10 px-9">
             <div className="relative w-full aspect-[1843/2888] overflow-hidden">
-              <Image src="/catocala-kotshubeji.png" alt="Catocala Kotshubeji" fill className="object-cover" />
+              <Image src="/catocala-kotshubeji.webp" alt="Catocala Kotshubeji" fill className="object-cover" />
             </div>
           </div>
         </div>
@@ -201,7 +201,7 @@ export default function Home() {
           </div>
           <div className="absolute left-0 top-0 w-full overflow-hidden -z-10 ml-5">
             <div className="relative overflow-hidden">
-              <img src="/catenatia-spinosa.png" alt="Catenatia Spinosa" className="object-contain" />
+              <img src="/catenatia-spinosa.webp" alt="Catenatia Spinosa" className="object-contain" />
             </div>
           </div>
         </div>
@@ -232,13 +232,13 @@ export default function Home() {
           </div>
           <div className="absolute left-0 top-0 w-full overflow-hidden -z-10 px-9">
             <div className="relative w-full overflow-hidden">
-              <img src="/vincula-eprantium.png" alt="Vincula Eprantium" className="object-contain" />
+              <img src="/vincula-eprantium.webp" alt="Vincula Eprantium" className="object-contain" />
             </div>
           </div>
         </div>
         <div className="grid grid-cols-2 items-center gap-8 px-10">
           <div className="relative max-h-[370px] max-w-full aspect-[940/370]">
-            <Image src="/pieces.png" alt="Pieces" fill quality={100} />
+            <Image src="/pieces.webp" alt="Pieces" fill quality={100} />
           </div>
           <Button text="WATCH COLLECTION" />
         </div>
@@ -258,8 +258,8 @@ export default function Home() {
           <div className="absolute left-0 -top-[420px] w-full h-[3927px] overflow-hidden -z-10">
             <div className="relative w-full h-[3927px] overflow-hidden">
               <Image
-                src="/malum-arsum.png"
-                alt="Malum Arsum.png"
+                src="/malum-arsum.webp"
+                alt="Malum Arsum.webp"
                 fill
                 className="object-cover"
                 quality={100}
