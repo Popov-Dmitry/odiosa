@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 :root {
+    --background: #eeefea;
     --foreground: #474747;
     --font-johnstemp: 'johnstemp', sans-serif;
 }
 
 body {
-    background: url("/background.png") repeat 0 0;
+    background-color: var(--background);
     color: var(--foreground);
     font-family: var(--font-johnstemp);
     font-weight: 500;
