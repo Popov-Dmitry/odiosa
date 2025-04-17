@@ -8,8 +8,8 @@ const Button = ({ variant = "primary", text, onClick, className, imageClassName 
       <div className={clsx("relative w-full h-[74px] lg:h-[130px] flex items-center justify-center", imageClassName)}>
         <Image src={`/button-${variant}.webp`} alt="" fill />
         <div
-          className="z-10 text-[#E9E9E3]"
-          style={{ WebkitTextStroke: "4px #FFFFFF2E" }}
+          className={clsx("z-10", variant === "outlined" ? "text-[#575757] text-glow-20" : "text-[#E9E9E3]")}
+          style={{ WebkitTextStroke: variant === "outlined" ? undefined : "4px #FFFFFF2E" }}
         >
           {text}
         </div>
