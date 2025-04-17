@@ -2,11 +2,15 @@
 
 @tailwind utilities;
 
-@utility text-glow-1 {
+@utility text-glow-10 {
+    text-shadow: 0 0 1px #000000;
+}
+
+@utility text-glow-15 {
     text-shadow: 0 0 1.5px #000000;
 }
 
-@utility text-glow-2 {
+@utility text-glow-20 {
     text-shadow: 0 0 2px #000000;
 }
 
