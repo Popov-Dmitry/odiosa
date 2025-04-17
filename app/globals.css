@@ -2,6 +2,14 @@
 
 @tailwind utilities;
 
+@utility text-glow-1 {
+    text-shadow: 0 0 1.5px #000000;
+}
+
+@utility text-glow-2 {
+    text-shadow: 0 0 2px #000000;
+}
+
 :root {
     --background: #f4f2ef;
     --foreground: #474747;
