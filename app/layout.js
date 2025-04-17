@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
             backgroundSize: "200px 200px"
           }}
         />
-        <main className="relative z-10">
+        <main className="relative z-10 pt-[80px] lg:pt-[96px] pb-[60px] lg:pb-[120px]">
           {children}
         </main>
         <Footer />

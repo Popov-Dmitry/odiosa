@@ -14,14 +14,15 @@ const Header = () => {
           <Link href="/">Manifesto</Link>
           <Link href="/">Contacts</Link>
         </div>
-        <Image
-          src="/logo.webp"
-          alt="odiosa"
-          width={72}
-          height={21}
-          className="absolute left-1/2 -translate-x-1/2"
-          quality={100}
-        />
+        <Link href="/" className="absolute left-1/2 -translate-x-1/2">
+          <Image
+            src="/logo.webp"
+            alt="odiosa"
+            width={72}
+            height={21}
+            quality={100}
+          />
+        </Link>
         <Link href="/" className="hidden lg:block ml-auto text-2xl z-10">Bag</Link>
       </div>
       <HeaderMenu />

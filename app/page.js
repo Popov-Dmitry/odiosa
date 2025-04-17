@@ -3,7 +3,7 @@ import Button from "@/components/button";
 
 export default function Home() {
   return (
-    <div className="pt-[110px] lg:pt-[126px] pb-[60px] text-shadow-[0_0_1.5px_#000000] lg:text-shadow-[0_0_2px_#000000]">
+    <div className="pt-[30px] lg:pt-5 text-shadow-[0_0_1.5px_#000000] lg:text-shadow-[0_0_2px_#000000]">
       <div className="lg:hidden overflow-hidden">
         <div className="relative overflow-hidden">
           <div>
