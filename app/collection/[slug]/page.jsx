@@ -2,7 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Button from "@/components/button";
 import Input from "@/components/input";
-import Options from "@/components/Options";
+import Options from "@/components/options";
+import ModelViewer from "@/components/model-viewer";
 
 const colors = ["orange", "black"];
 const sizes = ["s", "m", "l"];
@@ -19,8 +20,8 @@ const ProductCard = () => {
           <div className="text-xl text-glow-10">
             Material: Cotton
           </div>
-          <div className="mt-5">
-            <img src="/mock/3d.png" alt="" />
+          <div className="mt-5 h-96">
+            <ModelViewer model="papa-pas.glb" />
           </div>
           <div className="mt-10 text-xl text-glow-10">
             High-waisted structured trousers with architectural pleating and asymmetric draping.
@@ -68,8 +69,8 @@ const ProductCard = () => {
               <Button variant="outlined" text="ORDER" className="mt-[60px]" />
             </div>
           </div>
-          <div className="relative flex justify-end">
-            <img src="/mock/3d.png" alt="" className="absolute h-full" />
+          <div className="relative flex justify-end h-full">
+            <ModelViewer model="papa-pas.glb" />
             <div className="text-[54px] text-glow-30">370$</div>
           </div>
         </div>
