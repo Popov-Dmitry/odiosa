@@ -23,6 +23,8 @@ const ProductCard = () => {
           <div className="mt-5 h-96">
             <ModelViewer model="papa-pas.glb" />
           </div>
+          <Options colors={colors} sizes={sizes} defaultSize="m" className="mt-10" />
+          <Button variant="outlined" text="ORDER" className="mt-8" />
           <div className="mt-10 text-xl text-glow-10">
             High-waisted structured trousers with architectural pleating and asymmetric draping.
             <br /><br />
