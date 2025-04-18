@@ -21,7 +21,7 @@ const ProductCard = () => {
             Material: Cotton
           </div>
           <div className="mt-5 h-96">
-            <ModelViewer model="papa-pas.glb" />
+            <ModelViewer model="model.glb" />
           </div>
           <Options colors={colors} sizes={sizes} defaultSize="m" className="mt-10" />
           <Button variant="outlined" text="ORDER" className="mt-8" />
@@ -72,7 +72,7 @@ const ProductCard = () => {
             </div>
           </div>
           <div className="relative flex justify-end h-full">
-            <ModelViewer model="papa-pas.glb" />
+            <ModelViewer model="model.glb" />
             <div className="text-[54px] text-glow-30">370$</div>
           </div>
         </div>
