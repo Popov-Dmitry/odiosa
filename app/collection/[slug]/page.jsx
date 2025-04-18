@@ -1,14 +1,13 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Button from "@/components/button";
 import Input from "@/components/input";
+import Options from "@/components/Options";
+
+const colors = ["orange", "black"];
+const sizes = ["s", "m", "l"];
 
 const ProductCard = () => {
-  const [color, setColor] = useState("orange");
-  const [size, setSize] = useState("M");
-
   return (
     <div>
       <div className="lg:hidden">
@@ -65,56 +64,7 @@ const ProductCard = () => {
               <div className="text-[44px] text-glow-30 text-right">
                 Material: Cotton
               </div>
-              <div className="mt-5 grid grid-rows-2 grid-flow-col items-center w-fit text-[44px] text-glow-30">
-                <div className="mr-2">Color:</div>
-                <div>Size:</div>
-                <div
-                  className="relative w-[55px] h-[53px] flex items-center justify-center cursor-pointer"
-                  onClick={() => setColor("orange")}
-                >
-                  {color === "orange" && (
-                    <Image src="/select-color.svg" alt="" width={55} height={53} className="absolute right-0.5" />
-                  )}
-                  <Image src="/colors/orange.svg" alt="orange" width={28} height={30} />
-                </div>
-                <div
-                  className="relative w-[44px] h-[47px] flex items-center justify-center cursor-pointer"
-                  onClick={() => setSize("S")}
-                >
-                  {size === "S" && (
-                    <Image src="/select-size.svg" alt="" width={44} height={47} className="absolute right-0.5" />
-                  )}
-                  S
-                </div>
-                <div
-                  className="relative w-[55px] h-[53px] flex items-center justify-center cursor-pointer"
-                  onClick={() => setColor("black")}
-                >
-                  {color === "black" && (
-                    <Image src="/select-color.svg" alt="" width={55} height={53} className="absolute" />
-                  )}
-                  <Image src="/colors/black.svg" alt="black" width={28} height={30} />
-                </div>
-                <div
-                  className="relative w-[44px] h-[47px] flex items-center justify-center cursor-pointer"
-                  onClick={() => setSize("M")}
-                >
-                  {size === "M" && (
-                    <Image src="/select-size.svg" alt="" width={44} height={47} className="absolute" />
-                  )}
-                  M
-                </div>
-                <div />
-                <div
-                  className="relative w-[44px] h-[47px] flex items-center justify-center cursor-pointer"
-                  onClick={() => setSize("L")}
-                >
-                  {size === "L" && (
-                    <Image src="/select-size.svg" alt="" width={44} height={47} className="absolute" />
-                  )}
-                  L
-                </div>
-              </div>
+              <Options colors={colors} sizes={sizes} defaultSize="m" className="mt-5" />
               <Button variant="outlined" text="ORDER" className="mt-[60px]" />
             </div>
           </div>
