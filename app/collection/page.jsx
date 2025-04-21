@@ -98,7 +98,7 @@ const Collection = () => {
                   <img src={item.src} alt={item.title} />
                 </div>
                 <div className={clsx(
-                  "mt-auto whitespace-nowrap text-xs lg:text-2xl lg:text-glow-15 lg:pt-5",
+                  "mt-auto whitespace-nowrap text-xs lg:text-2xl lg:text-glow-15 lg:pt-5 lg:whitespace-normal",
                   item.id === current.id && "underline"
                 )}>
                   {item.title}
