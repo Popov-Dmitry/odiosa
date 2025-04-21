@@ -33,19 +33,7 @@ const ProductCard = () => {
             sculptural folds along the leg. Engineered pleats and tapered construction create a dynamic silhouette.
           </div>
         </div>
-        <div className="ml-[9px] mr-3.5 relative">
-          <img src="/mock/details-top-mobile.png" alt="" />
-          <div
-            className="text-base text-glow-10 absolute bottom-[100px] right-0 w-1/2 flex flex-col gap-[45px] items-end">
-            <div className="w-[118px]">
-              The dyeing process is ensuring depth of color, oxidation, and organic evolution.
-            </div>
-            <div>Need description for buttons</div>
-          </div>
-        </div>
-        <div className="-mt-56 ml-[9px] mr-3.5">
-          <img src="/mock/details-bottom-mobile.png" alt="" />
-        </div>
+        <img src="/mock/details-mobile.webp" alt="" className="pl-[9px] pr-3.5" />
         <div className="mt-9 ml-[15px] mr-3.5">
           <img src="/mock/model-top-mobile.png" alt="" />
         </div>
