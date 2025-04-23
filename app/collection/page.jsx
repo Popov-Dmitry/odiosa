@@ -79,8 +79,8 @@ const Collection = () => {
             <div className="px-2.5 text-[26px] text-glow-10 uppercase lg:absolute lg:left-0 lg:top-0 lg:px-0">
               Dissolutio Vitis Solis
             </div>
-            <div className="mt-10 mx-8">
-              <ModelViewer model="model.glb" />
+            <div className="mt-10 mx-8 h-[calc(100vh_-_240px_-_100px_-_80px)] lg:h-[calc(100vh_-_240px_-_96px)]">
+              <ModelViewer model="papa-pas.glb" />
             </div>
           </div>
         </div>

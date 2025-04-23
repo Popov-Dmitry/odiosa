@@ -22,7 +22,7 @@ const ProductCard = () => {
             Material: Cotton
           </div>
           <div className="mt-5 h-96">
-            <ModelViewer model="model.glb" device="mobile" />
+            <ModelViewer model="papa-pas.glb" device="mobile" />
           </div>
           <Options colors={colors} sizes={sizes} defaultSize="m" className="mt-10" />
           <Button variant="outlined" text="ORDER" className="mt-8" />
@@ -61,7 +61,7 @@ const ProductCard = () => {
             </div>
           </div>
           <div className="relative flex justify-end h-[calc(100vh_-_60px_-_96px)]">
-            <ModelViewer model="model.glb" device="desktop" />
+            <ModelViewer model="papa-pas.glb" device="desktop" />
             <div className="text-[54px] text-glow-30 absolute">370$</div>
           </div>
         </div>
