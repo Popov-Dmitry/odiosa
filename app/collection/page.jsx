@@ -105,11 +105,11 @@ const Collection = () => {
                 </div>
               </div>
             ))}
-            <div className="lg:absolute col-start-2 -ml-[16px] h-full">
-              <img src="/grid-col-1.png" alt="" className="h-full w-[9px]" />
+            <div className="lg:absolute col-start-2 -ml-[22px] h-full">
+              <img src="/grid-col-1.png" alt="" className="h-full w-[18px]" />
             </div>
-            <div className="lg:absolute col-start-3 -ml-[16px] h-full">
-              <img src="/grid-col-2.png" alt="" className="h-full w-[9px]" />
+            <div className="lg:absolute col-start-3 -ml-[22px] h-full">
+              <img src="/grid-col-2.png" alt="" className="h-full w-[18px]" />
             </div>
             {Array(collection.length % 3 === 0 ? (collection.length / 3 - 1) : Math.floor(collection.length / 3))
               .fill(1)
