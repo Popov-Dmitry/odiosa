@@ -22,7 +22,7 @@ const ProductCard = () => {
             Material: Cotton
           </div>
           <div className="mt-5 h-96">
-            <ModelViewer model="model.glb" />
+            <ModelViewer model="model.glb" device="mobile" />
           </div>
           <Options colors={colors} sizes={sizes} defaultSize="m" className="mt-10" />
           <Button variant="outlined" text="ORDER" className="mt-8" />
@@ -42,7 +42,7 @@ const ProductCard = () => {
         </div>
       </div>
       <div className="hidden lg:block pt-[30px]">
-        <div className="grid grid-cols-2 gap-5 px-10 h-[calc(100vh_-_60px_-_96px)]">
+        <div className="grid grid-cols-2 gap-5 px-10 min-h-[calc(100vh_-_60px_-_96px)]">
           <div className="flex flex-col justify-between">
             <div>
               <div className="text-[54px] text-glow-30 uppercase">Laminata Ajoura</div>
@@ -60,9 +60,9 @@ const ProductCard = () => {
               <Button variant="outlined" text="ORDER" className="mt-[60px]" />
             </div>
           </div>
-          <div className="relative flex justify-end h-full">
-            <ModelViewer model="model.glb" />
-            <div className="text-[54px] text-glow-30">370$</div>
+          <div className="relative flex justify-end h-[calc(100vh_-_60px_-_96px)]">
+            <ModelViewer model="model.glb" device="desktop" />
+            <div className="text-[54px] text-glow-30 absolute">370$</div>
           </div>
         </div>
         <div className="mt-32 px-10">

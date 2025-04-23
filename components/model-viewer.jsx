@@ -15,8 +15,15 @@ const Model = ({ model }) => {
   );
 };
 
-const ModelViewer = ({ model }) => {
+const ModelViewer = ({ model, device }) => {
   const { isMobile } = useResponsive();
+
+  if (device === "mobile" && !isMobile) {
+    return null;
+  }
+  if (device === "desktop" && isMobile) {
+    return null;
+  }
 
   return (
     <div className="h-full w-full relative cursor-pointer">
