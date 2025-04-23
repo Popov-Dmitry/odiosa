@@ -1,14 +1,20 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
 import useResponsive from "@/hooks/use-responsive";
+import { usePathname } from "next/navigation";
 
 const HeaderMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { isDesktop } = useResponsive();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   if (isDesktop) {
     return null;
@@ -35,8 +41,8 @@ const HeaderMenu = () => {
             backgroundSize: "200px 200px"
           }}
         />
-        <Link href="/">Collection</Link>
-        <Link href="/">Manifesto</Link>
+        <Link href="/collection">Collection</Link>
+        <Link href="/manifesto">Manifesto</Link>
         <Link href="/">Contacts</Link>
         <Link href="/">Bag</Link>
       </div>
