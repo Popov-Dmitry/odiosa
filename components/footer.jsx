@@ -40,17 +40,17 @@ const Footer = () => {
             <div className="uppercase text-[26px]">Contacts</div>
             <div className="flex flex-col text-xl mt-10">
               <a href="mailto:Info@odiosa.eu">Info@odiosa.eu</a>
-              <Link href="/">Instagram</Link>
+              <a target="_blank" href="https://www.instagram.com/odiosa.rarespecies/">Instagram</a>
             </div>
           </div>
-          <div>
-            <div className="uppercase text-[26px]">Concept Stores</div>
-            <div className="flex flex-col text-xl mt-10">
-              <Link href="/">C-Store</Link>
-              <Link href="/">Store con</Link>
-              <Link href="/">Osa Store</Link>
-            </div>
-          </div>
+          {/*<div>*/}
+          {/*  <div className="uppercase text-[26px]">Concept Stores</div>*/}
+          {/*  <div className="flex flex-col text-xl mt-10">*/}
+          {/*    <Link href="/">C-Store</Link>*/}
+          {/*    <Link href="/">Store con</Link>*/}
+          {/*    <Link href="/">Osa Store</Link>*/}
+          {/*  </div>*/}
+          {/*</div>*/}
         </div>
         <div className="relative w-full h-4 mt-[18px]">
           <Image src="/fotter-line-2.webp" alt="" fill />
