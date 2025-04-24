@@ -36,8 +36,9 @@ const ModelViewer = ({ model, device }) => {
         </Suspense>
 
         <OrbitControls
-          autoRotate={isMobile}
+          autoRotate
           autoRotateSpeed={1}
+          enableZoom={false}
           minPolarAngle={Math.PI / 2}
           maxPolarAngle={Math.PI / 2}
         />
