@@ -30,6 +30,10 @@
     text-shadow: 0 0 3px #000000;
 }
 
+* {
+    -webkit-font-smoothing: antialiased;
+}
+
 :root {
     --background: #f4f2ef;
     --foreground: #474747;
