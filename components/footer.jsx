@@ -56,22 +56,22 @@ const Footer = () => {
           <Image src="/fotter-line-2.webp" alt="" fill />
         </div>
       </div>
-      <div className="grid lg:grid-cols-3 lg:gap-20 text-2xl">
+      <div className="grid lg:grid-cols-2 lg:gap-20 text-2xl">
         <div className="hidden lg:flex lg:flex-col xl:flex-row xl:gap-5">
           <div>Contacts:</div>
           <div className="flex flex-col xl:mt-[28px] lg:ml-10 xl:ml-0">
             <a href="mailto:Info@odiosa.eu">Info@odiosa.eu</a>
-            <Link href="/">Instagram</Link>
+            <a target="_blank" href="https://www.instagram.com/odiosa.rarespecies/">Instagram</a>
           </div>
         </div>
-        <div className="hidden lg:flex lg:flex-col xl:flex-row xl:gap-5 text-nowrap">
-          <div>Concept Stores:</div>
-          <div className="flex flex-col xl:mt-[28px] lg:ml-[74px] xl:ml-0">
-            <Link href="/">C-Store</Link>
-            <Link href="/">Store con</Link>
-            <Link href="/">Osa Store</Link>
-          </div>
-        </div>
+        {/*<div className="hidden lg:flex lg:flex-col xl:flex-row xl:gap-5 text-nowrap">*/}
+        {/*  <div>Concept Stores:</div>*/}
+        {/*  <div className="flex flex-col xl:mt-[28px] lg:ml-[74px] xl:ml-0">*/}
+        {/*    <Link href="/">C-Store</Link>*/}
+        {/*    <Link href="/">Store con</Link>*/}
+        {/*    <Link href="/">Osa Store</Link>*/}
+        {/*  </div>*/}
+        {/*</div>*/}
         <div className="mt-6 pl-4 pr-3 grid grid-cols-3 gap-2 w-full text-xl lg:text-2xl lg:flex lg:flex-col lg:gap-0">
           <Link href="/">Privacy</Link>
           <Link href="/" className="text-center lg:text-start">Cookies</Link>
