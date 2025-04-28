@@ -5,6 +5,7 @@ import ModelViewer from "@/components/model-viewer";
 import ContactTheManager from "@/components/contact-the-manager";
 import { getProduct } from "@/utils/db-requests-server";
 import { redirect } from "next/navigation";
+import OrderButton from "@/client-components/order-button";
 
 const ProductCard = async ({ params }) => {
   const { slug } = await params;
@@ -29,7 +30,7 @@ const ProductCard = async ({ params }) => {
             <ModelViewer model="papa-pas.glb" device="mobile" />
           </div>
           <Options colors={product.colors} sizes={product.sizes} defaultSize="m" className="mt-10" />
-          <Button variant="outlined" text="ORDER" className="mt-8" />
+          <OrderButton className="mt-8" id={product.id} />
           <div className="mt-10 text-xl text-glow-10">
             {product.description}
           </div>
@@ -53,7 +54,7 @@ const ProductCard = async ({ params }) => {
                 Material: {product.material}
               </div>
               <Options colors={product.colors} sizes={product.sizes} defaultSize="m" className="mt-5" />
-              <Button variant="outlined" text="ORDER" className="mt-[60px]" />
+              <OrderButton className="mt-[60px]" id={product.id} />
             </div>
           </div>
           <div className="relative flex justify-end h-[calc(100vh_-_60px_-_96px)]">
