@@ -73,8 +73,8 @@ const Footer = () => {
         {/*  </div>*/}
         {/*</div>*/}
         <div className="mt-6 pl-4 pr-3 grid grid-cols-3 gap-2 w-full text-xl lg:text-2xl lg:flex lg:flex-col lg:gap-0">
-          <Link href="/">Privacy</Link>
-          <Link href="/" className="text-center lg:text-start">Cookies</Link>
+          <Link href="/privacy-and-cookies">Privacy</Link>
+          <Link href="/privacy-and-cookies" className="text-center lg:text-start">Cookies</Link>
           <Link href="/terms" className="text-end lg:text-start">Terms</Link>
         </div>
       </div>
