@@ -1,22 +1,42 @@
 "use client";
 
-import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import { Center, OrbitControls, useGLTF } from "@react-three/drei";
+import React, { Suspense, useEffect, useRef } from "react";
+import { Canvas, useThree } from "@react-three/fiber";
+import { OrbitControls, useGLTF } from "@react-three/drei";
 import useResponsive from "@/hooks/use-responsive";
+import * as THREE from "three";
 
-const Model = ({ model }) => {
+const Model = ({ model, controlsRef }) => {
   const { scene } = useGLTF(`/models/${model}`);
+  const { camera } = useThree();
 
-  return (
-    <Center>
-      <primitive object={scene} scale={2} />
-    </Center>
-  );
+  useEffect(() => {
+    if (scene) {
+      const box = new THREE.Box3().setFromObject(scene);
+      const center = box.getCenter(new THREE.Vector3());
+      const size = box.getSize(new THREE.Vector3());
+
+      const maxDim = Math.max(size.x, size.y, size.z);
+      const fov = camera.fov * (Math.PI / 180);
+      const distance = maxDim / (2 * Math.tan(fov / 2));
+
+      const offset = 1.25;
+      camera.position.set(center.x, center.y, center.z + distance * offset);
+      camera.lookAt(center);
+
+      if (controlsRef.current) {
+        controlsRef.current.target.copy(center);
+        controlsRef.current.update();
+      }
+    }
+  }, [scene]);
+
+  return <primitive object={scene} />;
 };
 
 const ModelViewer = ({ model, device }) => {
   const { isMobile } = useResponsive();
+  const controlsRef = useRef(null);
 
   if (device === "mobile" && !isMobile) {
     return null;
@@ -26,23 +46,26 @@ const ModelViewer = ({ model, device }) => {
   }
 
   return (
-    <div className="h-full w-full relative cursor-pointer">
-      <Canvas camera={{ position: [0, 0, 3], fov: 50 }}>
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[3, 3, 3]} intensity={1} />
+    <div className="h-full w-full relative cursor-pointer flex flec-col">
+      <div className="h-[calc(100%_-_76px)] w-full">
+        <Canvas camera={{ position: [0, 0, 3], fov: 50 }}>
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[3, 3, 3]} intensity={1} />
 
-        <Suspense fallback={null}>
-          <Model model={model} />
-        </Suspense>
+          <Suspense fallback={null}>
+            <Model model={model} controlsRef={controlsRef} />
+          </Suspense>
 
-        <OrbitControls
-          autoRotate
-          autoRotateSpeed={1}
-          enableZoom={false}
-          minPolarAngle={Math.PI / 2}
-          maxPolarAngle={Math.PI / 2}
-        />
-      </Canvas>
+          <OrbitControls
+            autoRotate
+            autoRotateSpeed={1}
+            enableZoom={false}
+            minPolarAngle={Math.PI / 2}
+            maxPolarAngle={Math.PI / 2}
+            ref={controlsRef}
+          />
+        </Canvas>
+      </div>
       <img
         src="/3d-arrows.webp"
         alt=""
