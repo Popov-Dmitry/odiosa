@@ -5,10 +5,15 @@ import ModelViewer from "@/components/model-viewer";
 import ContactTheManager from "@/components/contact-the-manager";
 import clsx from "clsx";
 import { getProducts } from "@/utils/db-requests-client";
+import useResponsive from "@/hooks/use-responsive";
+import { useRouter } from "next/navigation";
 
 const Collection = () => {
   const [current, setCurrent] = useState();
   const [products, setProducts] = useState();
+  const [hoveredIndex, setHoveredIndex] = useState();
+  const { isMobile } = useResponsive();
+  const router = useRouter();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -39,15 +44,23 @@ const Collection = () => {
         <div className="mt-5 lg:mt-0 lg:px-10">
           <div className="px-2.5 text-[26px] text-glow-10 uppercase lg:hidden">Collection</div>
           <div className="mt-5 flex gap-4 overflow-x-scroll overflow-y-hidden px-1.5 hide-scrollbar lg:grid lg:grid-cols-4 lg:gap-x-5 lg:gap-y-20 lg:relative">
-            {products?.map((item) => (
+            {products?.map((item, index) => (
               <div
-                key={item.slug}
+                key={index}
                 className="flex flex-col items-center cursor-pointer"
-                onClick={() => setCurrent(item)}
+                onClick={() => isMobile ? setCurrent(item) : router.push(`/collection/${item.slug}`)}
+                onMouseEnter={() => !isMobile && setHoveredIndex(index)}
+                onMouseLeave={() => !isMobile && setHoveredIndex(undefined)}
               >
-                <div className="aspect-[2/3] w-fit flex items-center">
-                  <img src={item.cover} alt={item.title} />
-                </div>
+                {hoveredIndex === index ? (
+                  <div className="h-full">
+                    <ModelViewer model="papa-pas.glb" disableRotate />
+                  </div>
+                ) : (
+                  <div className="aspect-[2/3] w-fit flex items-center">
+                    <img src={item.cover} alt={item.title} />
+                  </div>
+                )}
                 <div className={clsx(
                   "mt-auto whitespace-nowrap text-xs lg:text-2xl lg:text-glow-15 lg:pt-5 lg:whitespace-normal",
                   item.slug === current.slug && "underline"

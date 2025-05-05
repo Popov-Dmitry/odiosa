@@ -5,6 +5,7 @@ import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import useResponsive from "@/hooks/use-responsive";
 import * as THREE from "three";
+import clsx from "clsx";
 
 const Model = ({ model, controlsRef }) => {
   const { scene } = useGLTF(`/models/${model}`);
@@ -34,7 +35,7 @@ const Model = ({ model, controlsRef }) => {
   return <primitive object={scene} />;
 };
 
-const ModelViewer = ({ model, device }) => {
+const ModelViewer = ({ model, device, disableRotate }) => {
   const { isMobile } = useResponsive();
   const controlsRef = useRef(null);
 
@@ -47,7 +48,7 @@ const ModelViewer = ({ model, device }) => {
 
   return (
     <div className="h-full w-full relative cursor-pointer flex flec-col">
-      <div className="h-[calc(100%_-_76px)] w-full">
+      <div className={clsx("w-full", disableRotate ? "h-full" : "h-[calc(100%_-_76px)] ")}>
         <Canvas camera={{ position: [0, 0, 3], fov: 50 }}>
           <ambientLight intensity={0.5} />
           <directionalLight position={[3, 3, 3]} intensity={1} />
@@ -59,6 +60,7 @@ const ModelViewer = ({ model, device }) => {
           <OrbitControls
             autoRotate
             autoRotateSpeed={1}
+            enableRotate={!disableRotate}
             enableZoom={false}
             minPolarAngle={Math.PI / 2}
             maxPolarAngle={Math.PI / 2}
@@ -66,11 +68,13 @@ const ModelViewer = ({ model, device }) => {
           />
         </Canvas>
       </div>
-      <img
-        src="/3d-arrows.webp"
-        alt=""
-        className="absolute bottom-0 pointer-events-none w-1/2 left-1/2 -translate-x-1/2"
-      />
+      {!disableRotate && (
+        <img
+          src="/3d-arrows.webp"
+          alt=""
+          className="absolute bottom-0 pointer-events-none w-1/2 left-1/2 -translate-x-1/2"
+        />
+      )}
     </div>
   );
 };
