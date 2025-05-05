@@ -25,8 +25,8 @@ const Collection = () => {
 
   return (
     <div>
-      <div className="lg:grid lg:grid-cols-2 lg:px-10">
-        <div>
+      <div>
+        <div className="lg:hidden">
           <div className="lg:fixed lg:w-1/2">
             <div className="px-2.5 text-[26px] text-glow-10 uppercase lg:absolute lg:left-0 lg:top-0 lg:px-0">
               {current.title}
@@ -36,10 +36,9 @@ const Collection = () => {
             </div>
           </div>
         </div>
-        <div className="mt-5 lg:mt-0">
+        <div className="mt-5 lg:mt-0 lg:px-10">
           <div className="px-2.5 text-[26px] text-glow-10 uppercase lg:hidden">Collection</div>
-          <div
-            className="mt-5 flex gap-4 overflow-x-scroll overflow-y-hidden px-1.5 hide-scrollbar lg:grid lg:grid-cols-3 lg:gap-x-5 lg:gap-y-20 lg:relative">
+          <div className="mt-5 flex gap-4 overflow-x-scroll overflow-y-hidden px-1.5 hide-scrollbar lg:grid lg:grid-cols-4 lg:gap-x-5 lg:gap-y-20 lg:relative">
             {products?.map((item) => (
               <div
                 key={item.slug}
@@ -63,7 +62,10 @@ const Collection = () => {
             <div className="lg:absolute col-start-3 -ml-[22px] h-full">
               <img src="/grid-col-2.png" alt="" className="h-full w-[18px]" />
             </div>
-            {Array(products.length % 3 === 0 ? (products.length / 3 - 1) : Math.floor(products.length / 3))
+            <div className="lg:absolute col-start-4 -ml-[22px] h-full">
+              <img src="/grid-col-1.png" alt="" className="h-full w-[18px]" />
+            </div>
+            {Array(products.length % 4 === 0 ? (products.length / 4 - 1) : Math.floor(products.length / 4))
               .fill(1)
               .map((item, index) => (
                 <div className="lg:absolute w-full -mt-[50px]" style={{ gridRowStart: index + 2 }}>
