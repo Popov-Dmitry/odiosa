@@ -8,7 +8,7 @@ import * as THREE from "three";
 import clsx from "clsx";
 
 const Model = ({ model, controlsRef }) => {
-  const { scene } = useGLTF(`/models/${model}`);
+  const { scene } = useGLTF(model);
   const { camera } = useThree();
 
   useEffect(() => {

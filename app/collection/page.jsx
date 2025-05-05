@@ -7,6 +7,7 @@ import clsx from "clsx";
 import { getProducts } from "@/utils/db-requests-client";
 import useResponsive from "@/hooks/use-responsive";
 import { useRouter } from "next/navigation";
+import { useGLTF } from "@react-three/drei";
 
 const Collection = () => {
   const [current, setCurrent] = useState();
@@ -24,6 +25,12 @@ const Collection = () => {
     fetchProducts();
   }, []);
 
+  useEffect(() => {
+    if (products) {
+      products?.forEach((product) => useGLTF.preload(product.model));
+    }
+  }, [products]);
+
   if (!products) {
     return null;
   }
@@ -37,7 +44,7 @@ const Collection = () => {
               {current.title}
             </div>
             <div className="mt-10 mx-8 h-[calc(100vh_-_240px_-_100px_-_80px)] lg:h-[calc(100vh_-_240px_-_96px)]">
-              <ModelViewer model="papa-pas.glb" />
+              <ModelViewer model={current.model} />
             </div>
           </div>
         </div>
@@ -54,7 +61,7 @@ const Collection = () => {
               >
                 {hoveredIndex === index ? (
                   <div className="h-full">
-                    <ModelViewer model="papa-pas.glb" disableRotate />
+                    <ModelViewer model={item.model} disableRotate />
                   </div>
                 ) : (
                   <div className="aspect-[2/3] w-fit flex items-center">
@@ -81,7 +88,11 @@ const Collection = () => {
             {Array(products.length % 4 === 0 ? (products.length / 4 - 1) : Math.floor(products.length / 4))
               .fill(1)
               .map((item, index) => (
-                <div className="lg:absolute w-full -mt-[50px]" style={{ gridRowStart: index + 2 }}>
+                <div
+                  key={index}
+                  className="lg:absolute w-full -mt-[50px]"
+                  style={{ gridRowStart: index + 2 }}
+                >
                   <img src={index % 2 === 0 ? "/grid-row-1.png" : "/grid-row-2.png"} alt="" className="w-full h-5" />
                 </div>
               ))}

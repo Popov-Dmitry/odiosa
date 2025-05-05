@@ -29,7 +29,7 @@ const ProductCard = async ({ params, searchParams }) => {
             Material: {product.material}
           </div>
           <div className="mt-5 h-96">
-            <ModelViewer model="papa-pas.glb" device="mobile" />
+            <ModelViewer model={product.model} device="mobile" />
           </div>
           <Options
             colors={products.map((product) => product.color)}
@@ -66,7 +66,7 @@ const ProductCard = async ({ params, searchParams }) => {
             </div>
           </div>
           <div className="relative flex justify-end h-[calc(100vh_-_60px_-_96px)]">
-            <ModelViewer model="papa-pas.glb" device="desktop" />
+            <ModelViewer model={product.model} device="desktop" />
             <div className="text-[54px] text-glow-30 absolute">{product.price}$</div>
           </div>
         </div>
