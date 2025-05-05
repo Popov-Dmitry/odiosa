@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
-const { DRAGGABLE_DEBUG } = process.env;
+const { SUPABASE_URL, SUPABASE_ANON_KEY, STRIPE_SECRET_KEY } = process.env;
 
 const nextConfig = {
   env : {
-    DRAGGABLE_DEBUG
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY,
+    STRIPE_SECRET_KEY
   }
 };
 
