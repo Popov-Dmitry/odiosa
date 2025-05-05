@@ -1,14 +1,37 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 import useResponsive from "@/hooks/use-responsive";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const Options = ({ colors, sizes, defaultColor, defaultSize, className }) => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const { isMobile } = useResponsive();
   const [color, setColor] = useState(defaultColor || colors[0]);
   const [size, setSize] = useState(defaultSize || sizes[0]);
-  const { isMobile } = useResponsive();
+
+  const createQueryString = useCallback(
+    (params) => {
+      const query = new URLSearchParams(searchParams.toString());
+
+      Object.entries(params).forEach(([key, value]) => {
+        query.set(key, value);
+      });
+
+      return query.toString();
+    },
+    [searchParams]
+  );
+
+
+  useEffect(() => {
+    setColor(searchParams.get("color") || defaultColor || colors[0]);
+    setSize(searchParams.get("size") || defaultSize || sizes[0]);
+  }, [searchParams]);
 
   return (
     <div className={clsx(
@@ -22,7 +45,7 @@ const Options = ({ colors, sizes, defaultColor, defaultSize, className }) => {
           {i in colors ? (
             <div
               className="relative w-[40px] h-[42px] lg:w-[55px] lg:h-[53px] flex items-center justify-center cursor-pointer"
-              onClick={() => setColor(colors[i])}
+              onClick={() => router.push(`${pathname}?${createQueryString({ color: colors[i], size })}`)}
             >
               {color === colors[i] && (
                 <Image src="/select-color.svg" alt="" fill className="-ml-0.5" />
@@ -33,7 +56,7 @@ const Options = ({ colors, sizes, defaultColor, defaultSize, className }) => {
           {i in sizes ? (
             <div
               className="relative w-[40px] h-[38px] lg:w-[51px] lg:h-[49px] flex items-center justify-center cursor-pointer uppercase"
-              onClick={() => setSize(sizes[i])}
+              onClick={() => router.push(`${pathname}?${createQueryString({ color, size: sizes[i] })}`)}
             >
               {size === sizes[i] && (
                 <Image src="/select-size.svg" alt="" fill />

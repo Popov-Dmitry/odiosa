@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "@/components/button";
 import Options from "@/components/options";
 import ModelViewer from "@/components/model-viewer";
 import ContactTheManager from "@/components/contact-the-manager";
@@ -7,13 +6,16 @@ import { getProduct } from "@/utils/db-requests-server";
 import { redirect } from "next/navigation";
 import OrderButton from "@/client-components/order-button";
 
-const ProductCard = async ({ params }) => {
+const ProductCard = async ({ params, searchParams }) => {
   const { slug } = await params;
-  const product = await getProduct(slug);
+  const { color, size } = await searchParams;
+  const products = await getProduct(slug);
 
-  if (!product) {
+  if (!products || !products.length) {
     redirect("/collection");
   }
+
+  const product = color ? (products.find((product) => product.color === color) || products[0]) : products[0];
 
   return (
     <div>
@@ -21,7 +23,7 @@ const ProductCard = async ({ params }) => {
         <div className="px-2.5">
           <div className="flex items-center justify-between gap-2.5 text-[26px] uppercase text-glow-15">
             <div>{product.title}</div>
-            <div>$${product.price}</div>
+            <div>${product.price}</div>
           </div>
           <div className="text-xl text-glow-10">
             Material: {product.material}
@@ -29,7 +31,13 @@ const ProductCard = async ({ params }) => {
           <div className="mt-5 h-96">
             <ModelViewer model="papa-pas.glb" device="mobile" />
           </div>
-          <Options colors={product.colors} sizes={product.sizes} defaultSize="m" className="mt-10" />
+          <Options
+            colors={products.map((product) => product.color)}
+            sizes={product.sizes}
+            defaultSize={size ? size : product.sizes.includes("m") ? "m" : sizes[0]}
+            defaultColor={product.color}
+            className="mt-10"
+          />
           <OrderButton className="mt-8" id={product.id} />
           <div className="mt-10 text-xl text-glow-10">
             {product.description}
@@ -53,7 +61,7 @@ const ProductCard = async ({ params }) => {
               <div className="text-[44px] text-glow-30 text-right">
                 Material: {product.material}
               </div>
-              <Options colors={product.colors} sizes={product.sizes} defaultSize="m" className="mt-5" />
+              <Options colors={products.map((product) => product.color)} sizes={product.sizes} defaultSize="m" className="mt-5" />
               <OrderButton className="mt-[60px]" id={product.id} />
             </div>
           </div>
