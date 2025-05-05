@@ -26,7 +26,7 @@ const Collection = () => {
   }, []);
 
   useEffect(() => {
-    if (products) {
+    if (products && !isMobile) {
       products?.forEach((product) => useGLTF.preload(product.model));
     }
   }, [products]);
@@ -54,7 +54,7 @@ const Collection = () => {
             {products?.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center cursor-pointer"
+                className="flex flex-col items-center gap-1 lg:gap-0 cursor-pointer"
                 onClick={() => isMobile ? setCurrent(item) : router.push(`/collection/${item.slug}`)}
                 onMouseEnter={() => !isMobile && setHoveredIndex(index)}
                 onMouseLeave={() => !isMobile && setHoveredIndex(undefined)}
@@ -64,7 +64,7 @@ const Collection = () => {
                     <ModelViewer model={item.model} disableRotate />
                   </div>
                 ) : (
-                  <div className="aspect-[2/3] w-fit flex items-center">
+                  <div className="aspect-[2/3] min-w-[80px] flex items-center">
                     <img src={item.cover} alt={item.title} />
                   </div>
                 )}
