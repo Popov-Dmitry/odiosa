@@ -70,12 +70,14 @@ const ProductCard = async ({ params, searchParams }) => {
             <div className="text-[54px] text-glow-30 absolute">{product.price}$</div>
           </div>
         </div>
-        <div className="mt-32 px-10">
+        <div className="mt-32 px-10 flex justify-center">
           <img src={product.model_photo} alt="" />
         </div>
         <div className="mt-20 pl-10">
           <div className="text-[54px] text-glow-30">Details</div>
-          <img src={product.details_photo} alt="" />
+          <div className="flex justify-center">
+            <img src={product.details_photo} alt="" />
+          </div>
         </div>
       </div>
       <ContactTheManager className="mt-[60px] lg:mt-0" />
