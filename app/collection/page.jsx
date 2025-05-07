@@ -54,18 +54,23 @@ const Collection = () => {
             {products?.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center gap-1 lg:gap-0 cursor-pointer"
+                className="flex flex-col items-center gap-1 lg:gap-0 cursor-pointer relative aspect-[1.5/3] min-[1800px]:aspect-[1.8/3]"
                 onClick={() => isMobile ? setCurrent(item) : router.push(`/collection/${item.slug}`)}
                 onMouseEnter={() => !isMobile && setHoveredIndex(index)}
                 onMouseLeave={() => !isMobile && setHoveredIndex(undefined)}
               >
-                {hoveredIndex === index ? (
-                  <div className="h-full">
+                <div className={clsx(
+                  "min-w-[80px] flex items-center absolute duration-500",
+                  hoveredIndex === index ? "opacity-0" : "opacity-100"
+                )}>
+                  <img src={item.cover} alt={item.title} />
+                </div>
+                {hoveredIndex === index && (
+                  <div className={clsx(
+                    "h-[calc(100%_-_80px)] duration-500",
+                    hoveredIndex === index ? "opacity-100" : "opacity-0"
+                  )}>
                     <ModelViewer model={item.model} disableRotate />
-                  </div>
-                ) : (
-                  <div className="aspect-[2/3] min-w-[80px] flex items-center">
-                    <img src={item.cover} alt={item.title} />
                   </div>
                 )}
                 <div className={clsx(
