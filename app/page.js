@@ -186,12 +186,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="pl-[38px] relative lg:h-[1800px] xl:h-[2000px] 2xl:h-[2264px] overflow-hidden flex flex-col">
+        <div className="pl-[38px] relative lg:h-[1800px] min-[76rem]:h-[1900px] xl:h-[2000px] min-[92rem]:h-[2100px] 2xl:h-[2264px] overflow-hidden flex flex-col">
           <div className="w-1/2 ml-auto mr-20">
             The dyeing process is overseen by a resident textile artist, ensuring depth of color, oxidation, and
             organic evolution.
           </div>
-          <div className="mt-auto mb-[260px] min-[1220px]:mb-[200px] xl:mb-[220px] 2xl:mb-[68px]">
+          <div className="mt-auto mb-[260px] 2xl:mb-[68px]">
             <div>Nazvanie Pugovici, Pash</div>
             <div className="w-1/2 mt-[90px]">
               Artifacts embedded in the material-bone buttons hand-carved by a dedicated ivory craftsman, fossilized
