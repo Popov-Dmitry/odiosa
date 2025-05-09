@@ -191,7 +191,7 @@ export default function Home() {
             The dyeing process is overseen by a resident textile artist, ensuring depth of color, oxidation, and
             organic evolution.
           </div>
-          <div className="mt-auto mb-[260px] 2xl:mb-[68px]">
+          <div className="mt-auto mb-[260px] min-[1220px]:mb-[200px] xl:mb-[220px] 2xl:mb-[68px]">
             <div>Nazvanie Pugovici, Pash</div>
             <div className="w-1/2 mt-[90px]">
               Artifacts embedded in the material-bone buttons hand-carved by a dedicated ivory craftsman, fossilized
