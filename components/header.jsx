@@ -12,7 +12,7 @@ const Header = () => {
         <div className="hidden lg:flex gap-[70px] text-2xl z-10">
           <Link href="/collection">Collection</Link>
           <Link href="/manifesto">Manifesto</Link>
-          <Link href="/">Contacts</Link>
+          {/*<Link href="/">Contacts</Link>*/}
         </div>
         <Link href="/" className="absolute left-1/2 -translate-x-1/2">
           <Image

@@ -43,7 +43,7 @@ const HeaderMenu = () => {
         />
         <Link href="/collection">Collection</Link>
         <Link href="/manifesto">Manifesto</Link>
-        <Link href="/">Contacts</Link>
+        {/*<Link href="/">Contacts</Link>*/}
         <Link href="/">Bag</Link>
       </div>
     </>
