@@ -1,18 +1,16 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import ModelViewer from "@/components/model-viewer";
 import ContactTheManager from "@/components/contact-the-manager";
 import clsx from "clsx";
 import { getProducts } from "@/utils/db-requests-client";
 import useResponsive from "@/hooks/use-responsive";
 import { useRouter } from "next/navigation";
-import { useGLTF } from "@react-three/drei";
+import Image from "next/image";
 
 const Collection = () => {
   const [current, setCurrent] = useState();
   const [products, setProducts] = useState();
-  const [hoveredIndex, setHoveredIndex] = useState();
   const { isMobile } = useResponsive();
   const router = useRouter();
 
@@ -24,12 +22,6 @@ const Collection = () => {
     };
     fetchProducts();
   }, []);
-
-  useEffect(() => {
-    if (products && !isMobile) {
-      products?.forEach((product) => useGLTF.preload(product.model));
-    }
-  }, [products]);
 
   if (!products) {
     return null;
@@ -43,8 +35,8 @@ const Collection = () => {
             <div className="px-2.5 text-[26px] text-glow-10 uppercase lg:absolute lg:left-0 lg:top-0 lg:px-0">
               {current.title}
             </div>
-            <div className="mt-10 mx-8 h-[calc(100vh_-_240px_-_100px_-_80px)] lg:h-[calc(100vh_-_240px_-_96px)]">
-              <ModelViewer model={current.model} />
+            <div className="mt-10 mx-8 h-[calc(100vh_-_240px_-_100px_-_120px)] relative">
+              <Image src={current.cover} alt={current.title} fill />
             </div>
           </div>
         </div>
@@ -56,23 +48,10 @@ const Collection = () => {
                 key={index}
                 className="flex flex-col items-center gap-1 lg:gap-0 cursor-pointer relative aspect-[1.5/3] min-[1800px]:aspect-[1.8/3]"
                 onClick={() => isMobile ? setCurrent(item) : router.push(`/collection/${item.slug}`)}
-                onMouseEnter={() => !isMobile && setHoveredIndex(index)}
-                onMouseLeave={() => !isMobile && setHoveredIndex(undefined)}
               >
-                <div className={clsx(
-                  "min-w-[80px] flex items-center absolute duration-500",
-                  hoveredIndex === index ? "opacity-0" : "opacity-100"
-                )}>
-                  <img src={item.cover} alt={item.title} />
+                <div className="min-w-[80px] lg:w-full h-full flex items-center relative">
+                  <Image fill src={item.cover} alt={item.title} className="object-contain" />
                 </div>
-                {hoveredIndex === index && (
-                  <div className={clsx(
-                    "h-[calc(100%_-_80px)] duration-500",
-                    hoveredIndex === index ? "opacity-100" : "opacity-0"
-                  )}>
-                    <ModelViewer model={item.model} disableRotate />
-                  </div>
-                )}
                 <div className={clsx(
                   "mt-auto whitespace-nowrap text-xs lg:text-2xl lg:text-glow-15 lg:pt-5 lg:whitespace-normal",
                   item.slug === current.slug && "underline"

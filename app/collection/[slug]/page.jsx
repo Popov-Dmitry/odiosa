@@ -1,10 +1,10 @@
 import React from "react";
 import Options from "@/components/options";
-import ModelViewer from "@/components/model-viewer";
 import ContactTheManager from "@/components/contact-the-manager";
 import { getProduct } from "@/utils/db-requests-server";
 import { redirect } from "next/navigation";
 import OrderButton from "@/client-components/order-button";
+import Image from "next/image";
 
 const ProductCard = async ({ params, searchParams }) => {
   const { slug } = await params;
@@ -28,8 +28,8 @@ const ProductCard = async ({ params, searchParams }) => {
           <div className="text-xl text-glow-10">
             Material: {product.material}
           </div>
-          <div className="mt-5 h-96">
-            <ModelViewer model={product.model} device="mobile" />
+          <div className="mt-5 h-96 relative">
+            <Image src={product.cover} alt={product.title} fill className="object-contain" />
           </div>
           <Options
             colors={products.map((product) => product.color)}
@@ -66,7 +66,7 @@ const ProductCard = async ({ params, searchParams }) => {
             </div>
           </div>
           <div className="relative flex justify-end h-[calc(100vh_-_60px_-_96px)]">
-            <ModelViewer model={product.model} device="desktop" />
+            <Image src={product.cover} alt={product.title} fill className="object-contain" />
             <div className="text-[54px] text-glow-30 absolute">{product.price}$</div>
           </div>
         </div>
