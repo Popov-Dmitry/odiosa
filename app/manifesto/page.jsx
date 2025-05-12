@@ -8,7 +8,6 @@ const Manifesto = () => {
       </div>
       <div className="px-10">
         <div className="relative pl-14 pr-7 pb-20 mt-10 flex flex-col gap-20 lg:px-24 lg:max-w-[1522px] lg:mt-20 lg:pb-26 lg:justify-self-end lg:gap-10">
-          <div className="absolute bottom-0 left-0 right-0 w-full h-[1300px] bg-gradient-to-b from-[#E9E9E500] to-[#E4E4E1] pointer-events-none" />
           <div className="max-w-[270px] text-[26px] uppercase text-glow-15 self-end lg:max-w-none lg:text-[54px] lg:text-glow-25 lg:self-start">
             <div className="hidden lg:block">Odiosa</div>
             Manifesto of the Gentle and Sweet Bastard.
