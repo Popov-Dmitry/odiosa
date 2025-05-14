@@ -2,6 +2,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { CartProvider } from "@/providers/cart-provider";
 
 export const metadata = {
   title: "Odiosa"
@@ -36,7 +37,9 @@ export default function RootLayout({ children }) {
           }}
         />
         <main className="relative z-10 pt-[80px] lg:pt-[96px] pb-[60px] lg:pb-[120px]">
-          {children}
+          <CartProvider>
+            {children}
+          </CartProvider>
         </main>
         <Footer />
       </body>

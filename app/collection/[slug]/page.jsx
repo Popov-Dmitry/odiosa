@@ -38,7 +38,7 @@ const ProductCard = async ({ params, searchParams }) => {
             defaultColor={product.color}
             className="mt-10"
           />
-          <OrderButton className="mt-8" id={product.id} />
+          <OrderButton className="mt-8" id={product.id} size={size ? size : product.sizes.includes("m") ? "m" : sizes[0]} />
           <div className="mt-10 text-xl text-glow-10">
             {product.description}
           </div>
@@ -62,7 +62,7 @@ const ProductCard = async ({ params, searchParams }) => {
                 Material: {product.material}
               </div>
               <Options colors={products.map((product) => product.color)} sizes={product.sizes} defaultSize="m" className="mt-5" />
-              <OrderButton className="mt-[60px]" id={product.id} />
+              <OrderButton className="mt-[60px]" id={product.id} size={size ? size : product.sizes.includes("m") ? "m" : sizes[0]} />
             </div>
           </div>
           <div className="relative flex justify-end h-[calc(100vh_-_60px_-_96px)]">
