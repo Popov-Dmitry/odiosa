@@ -26,7 +26,7 @@ export async function POST(req) {
 
     const lineItems = items.map((item) => ({
       price_data: {
-        currency: "usd",
+        currency: "eur",
         product_data: {
           name: item.title,
           images: item.cover ? [item.cover] : undefined,
@@ -34,7 +34,7 @@ export async function POST(req) {
             productId: item.id.toString()
           }
         },
-        unit_amount: item.price
+        unit_amount: item.price * 100
       },
       quantity: 1
     }));
