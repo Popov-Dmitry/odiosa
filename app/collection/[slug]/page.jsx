@@ -62,8 +62,11 @@ const ProductCard = async ({ params, searchParams }) => {
               ))}
             </div>
           </div>
-          <div className="mt-10 text-xl text-glow-10 px-2.5">
-            {product.description}
+          <div className="mt-10 px-2.5">
+            <div className="text-[26px] text-glow-10 uppercase">Product Details</div>
+            <div className="text-xl text-glow-10">
+              {product.description}
+            </div>
           </div>
         </div>
         <img src={product.details_photo} alt="" className="pl-[9px] pr-3.5" />
