@@ -7,7 +7,11 @@ const Button = ({ variant = "primary", text, onClick, className, imageClassName,
   if (href) {
     return (
       <Link
-        className={clsx("w-full cursor-pointer h-[74px] !no-underline lg:h-[130px] text-[26px] lg:text-[54px]", className)}
+        className={clsx(
+          "w-full h-[74px] !no-underline lg:h-[130px] text-[26px] lg:text-[54px]",
+          disabled ? "cursor-not-allowed" : "cursor-pointer",
+          className
+        )}
         href={href}
       >
         <div className={clsx("relative w-full h-[74px] lg:h-[130px] flex items-center justify-center", imageClassName)}>
@@ -25,7 +29,11 @@ const Button = ({ variant = "primary", text, onClick, className, imageClassName,
 
   return (
     <button
-      className={clsx("w-full cursor-pointer h-[74px] lg:h-[130px] text-[26px] lg:text-[54px]", className)}
+      className={clsx(
+        "w-full h-[74px] lg:h-[130px] text-[26px] lg:text-[54px]",
+        disabled ? "cursor-not-allowed" : "cursor-pointer",
+        className
+      )}
       onClick={onClick}
       disabled={disabled}
     >

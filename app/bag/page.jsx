@@ -71,7 +71,10 @@ const Bag = () => {
               >
                 {product.title}
               </Link>
-              <button onClick={() => removeItem(`${product.id}-${product.size}`)}>
+              <button
+                onClick={() => removeItem(`${product.id}-${product.size}`)}
+                className="cursor-pointer"
+              >
                 <Image src="/remove.svg" alt="" width={18} height={18} />
               </button>
             </div>
@@ -122,6 +125,65 @@ const Bag = () => {
           disabled={!termsAccepted}
           onClick={onCheckOut}
         />
+      </div>
+      <div className="hidden lg:flex flex-col gap-5 px-10">
+        {cartDetails.map((product, index) => (
+          <div key={`${product.id}-${product.size}`}>
+            <div className="grid grid-cols-2 gap-5">
+              <div className="relative w-full min-h-56">
+                <button
+                  className="text-2xl text-glow-15 underline cursor-pointer"
+                  onClick={() => removeItem(`${product.id}-${product.size}`)}
+                >
+                  Remove
+                </button>
+                <Image src={product.cover} alt={product.title} fill className="object-contain pointer-events-none" />
+              </div>
+              <div className="grid grid-cols-2">
+                <div className="text-[54px]">${product.price}</div>
+                <div>
+                  <Link
+                    href={`/collection/${product.slug}?color=${product.color}&size=${product.size}`}
+                    className="text-[54px] uppercase !no-underline"
+                  >
+                    {product.title}
+                  </Link>
+                  <div className="mt-10 text-2xl text-glow-15">
+                    <div>Size: {product.size.toUpperCase()}</div>
+                    <div>Material: {product.material}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="relative w-full h-2.5 mt-5">
+              <Image src={index % 2 === 0 ? "/cart-line-1.webp" : "/cart-line-2.webp"} alt="" fill />
+            </div>
+          </div>
+        ))}
+        <div className="text-[54px] uppercase grid grid-cols-2 gap-5">
+          <div className="justify-self-end">subtotal:</div>
+          <div>${cartDetails.reduce((prev, current) => prev + current.price, 0)}</div>
+        </div>
+        <div className="flex flex-col gap-5">
+          <div className="relative w-full h-2.5">
+            <Image src="/cart-bottom-line-1.webp" alt="" fill />
+          </div>
+          <div className="grid grid-cols-2 gap-5">
+            <Checkbox checked={termsAccepted} onChange={setTermsAccepted}>
+            <span className="text-2xl text-glow-15">
+              By selecting this box, I agree to the full terms and conditions of purchase and acknowledge that my order might be subject to local duties/taxes imposed by the country of destination (if applicable) that are my.full responsibility.
+            </span>
+            </Checkbox>
+            <Button
+              text="Check Out"
+              disabled={!termsAccepted}
+              onClick={onCheckOut}
+            />
+          </div>
+          <div className="relative w-full h-2.5">
+            <Image src="/cart-bottom-line-2.webp" alt="" fill />
+          </div>
+        </div>
       </div>
     </>
   );
