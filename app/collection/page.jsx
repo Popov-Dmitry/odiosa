@@ -7,6 +7,7 @@ import { getProducts } from "@/utils/db-requests-client";
 import useResponsive from "@/hooks/use-responsive";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import Spinner from "@/components/spinner";
 
 const Collection = () => {
   const [current, setCurrent] = useState();
@@ -24,7 +25,7 @@ const Collection = () => {
   }, []);
 
   if (!products) {
-    return null;
+    return <Spinner />;
   }
 
   return (
