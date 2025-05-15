@@ -23,7 +23,7 @@ const Header = () => {
             quality={100}
           />
         </Link>
-        <Link href="/" className="hidden lg:block ml-auto text-2xl z-10">Bag</Link>
+        <Link href="/bag" className="hidden lg:block ml-auto text-2xl z-10">Bag</Link>
       </div>
       <HeaderMenu />
     </header>

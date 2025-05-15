@@ -9,35 +9,42 @@ const supabase = await createSupabaseBrowserClient();
 
 export async function POST(req) {
   try {
-    const { itemIds } = await req.json();
+    const { cart } = await req.json();
 
-    if (!itemIds || !Array.isArray(itemIds)) {
-      return new Response(JSON.stringify({ error: "No item IDs provided" }), { status: 400 });
+    if (!cart || !Array.isArray(cart)) {
+      return new Response(JSON.stringify({ error: "No cart provided" }), { status: 400 });
     }
 
     const { data: items, error } = await supabase
       .from("products")
       .select("id, title, price, cover")
-      .in("id", itemIds);
+      .in("id", cart.map((item) => item.split("-")[0]));
 
     if (error || !items) {
       throw new Error("Error fetching products");
     }
 
-    const lineItems = items.map((item) => ({
-      price_data: {
-        currency: "eur",
-        product_data: {
-          name: item.title,
-          images: item.cover ? [item.cover] : undefined,
-          metadata: {
-            productId: item.id.toString()
-          }
-        },
-        unit_amount: item.price * 100
-      },
-      quantity: 1
-    }));
+    const lineItems = cart.map((item) => {
+      const [id, size] = item.split("-");
+      const product = items.find((item) => item.id.toString() === id);
+      if (product) {
+        return {
+          price_data: {
+            currency: "eur",
+            product_data: {
+              name: `${product.title}, ${size.toUpperCase()}`,
+              images: product.cover ? [product.cover] : undefined,
+              metadata: {
+                productId: id.toString()
+              }
+            },
+            unit_amount: product.price * 100
+          },
+          quantity: 1
+        };
+      }
+      return null;
+    }).filter(item => item !== null);
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],

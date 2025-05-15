@@ -3,7 +3,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import Link from "next/link";
 
-const Button = ({ variant = "primary", text, onClick, className, imageClassName, href }) => {
+const Button = ({ variant = "primary", text, onClick, className, imageClassName, href, disabled }) => {
   if (href) {
     return (
       <Link
@@ -27,9 +27,15 @@ const Button = ({ variant = "primary", text, onClick, className, imageClassName,
     <button
       className={clsx("w-full cursor-pointer h-[74px] lg:h-[130px] text-[26px] lg:text-[54px]", className)}
       onClick={onClick}
+      disabled={disabled}
     >
       <div className={clsx("relative w-full h-[74px] lg:h-[130px] flex items-center justify-center", imageClassName)}>
-        <Image src={`/button-${variant}.webp`} alt="" fill />
+        <Image
+          src={`/button-${variant}.webp`}
+          alt=""
+          fill
+          className={clsx("duration-100", disabled && "opacity-75")}
+        />
         <div
           className={clsx("z-10 uppercase", variant === "outlined" ? "text-[#575757] text-glow-20" : "text-[#E9E9E3]")}
           style={{ WebkitTextStroke: variant === "outlined" ? undefined : "4px #FFFFFF2E" }}

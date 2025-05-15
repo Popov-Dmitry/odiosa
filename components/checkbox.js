@@ -10,6 +10,7 @@ const Checkbox = ({ checked = false, onChange, children }) => {
       <input
         type="checkbox"
         checked={checked}
+        onChange={() => onChange(!checked)}
         className="absolute w-[1px] h-[1px] p-0 overflow-hidden whitespace-nowrap border-none"
       />
       <span className="relative inline-flex items-center justify-center">

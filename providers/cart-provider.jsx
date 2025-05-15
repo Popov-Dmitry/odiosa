@@ -39,7 +39,7 @@ export function CartProvider(props) {
   }, [cart, isCartLoaded]);
 
   return (
-    <CartStateContext.Provider value={{ cart, addItem, removeItem, isInCart }}>
+    <CartStateContext.Provider value={{ cart, addItem, removeItem, isInCart, isCartLoaded }}>
       {children}
     </CartStateContext.Provider>
   );
