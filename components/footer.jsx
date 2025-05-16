@@ -11,13 +11,13 @@ const Footer = () => {
   const { isMobile } = useResponsive()
 
   return (
-    <div className="relative pb-9 lg:grid lg:grid-cols-2 text-shadow-[0_0_1.5px_#000000B2] lg:text-shadow-[0_0_2px_#000000B2]">
-      <div className="absolute top-0 left-0 right-0 lg:hidden -z-10">
-        <div className="relative w-full h-[142px]">
-          <Image src="/footer-mobile.webp" alt="" fill />
+    <div className="relative pb-9 lg:grid lg:grid-cols-2 text-shadow-[0_0_1.5px_#000000B2] lg:text-shadow-[0_0_2px_#000000B2] overflow-hidden">
+      <div className="absolute top-0 -left-2 right-0 lg:hidden -z-10 overflow-hidden">
+        <div className="relative w-[calc(100vw_+_30px)] aspect-[1482/1976]">
+          <Image src="/footer-mobile.svg" alt="" fill className="object-cover" />
         </div>
       </div>
-      <div className="pt-10 pl-3 pr-2 lg:px-10">
+      <div className="pt-10 pl-3 pr-2 min-[550px]:pt-20 lg:px-10 lg:pt-0">
         <div className="text-[26px] uppercase lg:text-2xl lg:normal-case">
           Newsletter
         </div>

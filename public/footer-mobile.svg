@@ -1,0 +1,38 @@
+<svg width="1482" height="1976" viewBox="0 0 1482 1976" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="topShadow" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="black" stop-opacity="0.2" />
+            <stop offset="100%" stop-color="black" stop-opacity="0" />
+        </linearGradient>
+
+        <mask id="mask">
+            <g filter="url(#filter0_d_587_3)">
+                <path d="M1282.1 51.5753C1341.22 51.5753 1400.71 49.192 1460 49.192V1971.5H22V80.0999C31.8015 80.0999 40.7196 82.0311 50.2083 82.4832C66.7185 83.2695 82.2605 94.3994 98.9034 94.3994C159.186 94.3994 219.847 71.2987 278.756 53.9105C311.648 44.202 342.589 45.9495 373.635 48.2822C403.907 50.557 434.278 53.3883 466.651 46.697C514.83 36.7388 571.905 42.8279 620.961 42.8279C683.348 42.8279 740.184 46.5293 802.571 46.5293C831.284 46.5293 843.118 39.7371 871.475 45.1399C896.78 49.9614 920.625 36.1727 945.503 42.5719C990.295 54.0931 1036.3 45.1399 1082 45.1399C1140.26 45.1399 1224 51.5753 1282.1 51.5753Z"
+                      fill="#f4f2ef" />
+            </g>
+        </mask>
+
+        <linearGradient id="shadowGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="black" stop-opacity="0.2" />
+            <stop offset="100%" stop-color="black" stop-opacity="0" />
+        </linearGradient>
+
+        <filter id="filter0_d_587_3" x="0.101522" y="0.696541" width="1481.8" height="1974.45" filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" type="matrix"
+                           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+            <feOffset dy="-18.2487" />
+            <feGaussianBlur stdDeviation="10.9492" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_587_3" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_587_3" result="shape" />
+        </filter>
+    </defs>
+
+    <g filter="url(#filter0_d_587_3)">
+        <path d="M1282.1 51.5753C1341.22 51.5753 1400.71 49.192 1460 49.192V1971.5H22V80.0999C31.8015 80.0999 40.7196 82.0311 50.2083 82.4832C66.7185 83.2695 82.2605 94.3994 98.9034 94.3994C159.186 94.3994 219.847 71.2987 278.756 53.9105C311.648 44.202 342.589 45.9495 373.635 48.2822C403.907 50.557 434.278 53.3883 466.651 46.697C514.83 36.7388 571.905 42.8279 620.961 42.8279C683.348 42.8279 740.184 46.5293 802.571 46.5293C831.284 46.5293 843.118 39.7371 871.475 45.1399C896.78 49.9614 920.625 36.1727 945.503 42.5719C990.295 54.0931 1036.3 45.1399 1082 45.1399C1140.26 45.1399 1224 51.5753 1282.1 51.5753Z"
+              fill="#f4f2ef"/>
+    </g>
+</svg>
