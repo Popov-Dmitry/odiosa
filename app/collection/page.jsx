@@ -30,11 +30,22 @@ const Collection = async () => {
             {products?.map((item, index) => (
               <Link
                 key={index}
-                className="flex flex-col items-center gap-1 lg:gap-0 cursor-pointer relative aspect-[1.5/3] min-[1800px]:aspect-[1.8/3]"
+                className="group flex flex-col items-center gap-1 lg:gap-0 cursor-pointer relative aspect-[1.5/3] min-[1800px]:aspect-[1.8/3]"
                 href={`/collection/${item.slug}`}
               >
                 <div className="w-full h-full flex items-center relative">
-                  <Image fill src={item.cover} alt={item.title} className="object-contain" />
+                  <Image
+                    fill
+                    src={item.cover}
+                    alt={item.title}
+                    className="object-contain duration-200 group-hover:opacity-0"
+                  />
+                  <Image
+                    fill
+                    src={item.cover_inner}
+                    alt={item.title}
+                    className="object-contain duration-200 opacity-0 group-hover:opacity-100"
+                  />
                 </div>
                 <div
                   className="mt-auto whitespace-nowrap text-xs lg:text-2xl lg:text-glow-15 lg:pt-5 lg:whitespace-normal">
