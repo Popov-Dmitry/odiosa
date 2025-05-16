@@ -72,10 +72,9 @@ const Footer = () => {
         {/*    <Link href="/">Osa Store</Link>*/}
         {/*  </div>*/}
         {/*</div>*/}
-        <div className="mt-6 pl-4 pr-3 grid grid-cols-3 gap-2 w-full text-xl lg:text-2xl lg:flex lg:flex-col lg:gap-0">
-          <Link href="/privacy-and-cookies">Privacy</Link>
-          <Link href="/privacy-and-cookies" className="text-center lg:text-start">Cookies</Link>
-          <Link href="/terms" className="text-end lg:text-start">Terms</Link>
+        <div className="mt-6 pl-4 pr-3 flex justify-between gap-2 w-full text-xl lg:text-2xl lg:flex-col lg:justify-start lg:gap-0">
+          <Link href="/privacy-and-cookies">Privacy & Cookies</Link>
+          <Link href="/terms">Terms</Link>
         </div>
       </div>
     </div>
