@@ -5,9 +5,12 @@ import { createSupabaseServerClient } from "@/utils/supabase-server-client";
 export const getProducts = async () => {
   const supabase = await createSupabaseServerClient();
   const { data } = await supabase.from("products")
-    .select("slug, cover, title");
+    .select("slug, cover, title")
+    .order("title");
 
-  return data;
+  return Array.from(
+    new Map(data.map(item => [item.slug, item])).values()
+  );
 };
 
 export const getProduct = async (slug) => {
