@@ -171,7 +171,7 @@ const Bag = () => {
           <div className="grid grid-cols-2 gap-5">
             <Checkbox checked={termsAccepted} onChange={setTermsAccepted}>
             <span className="text-2xl text-glow-15">
-              By selecting this box, I agree to the full terms and conditions of purchase and acknowledge that my order might be subject to local duties/taxes imposed by the country of destination (if applicable) that are my.full responsibility.
+              By selecting this box, I agree to the full terms and conditions of purchase and acknowledge that my order might be subject to local duties/taxes imposed by the country of destination (if applicable) that are my full responsibility.
             </span>
             </Checkbox>
             <Button
