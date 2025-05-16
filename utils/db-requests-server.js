@@ -6,6 +6,7 @@ export const getProducts = async () => {
   const supabase = await createSupabaseServerClient();
   const { data } = await supabase.from("products")
     .select("slug, cover, title")
+    .eq("is_show", true)
     .order("title");
 
   return Array.from(
