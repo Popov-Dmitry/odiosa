@@ -32,7 +32,7 @@ const ProductCard = async ({ params, searchParams }) => {
               Material: {product.material}
             </div>
             <div className="mt-5 h-96 relative">
-              <Image src={product.cover} alt={product.title} fill className="object-contain" />
+              <Image src={product.cover_inner} alt={product.title} fill className="object-contain" />
             </div>
             <Options
               colors={products.map((product) => product.color)}
@@ -92,7 +92,7 @@ const ProductCard = async ({ params, searchParams }) => {
             </div>
           </div>
           <div className="relative flex justify-end h-[calc(100vh_-_60px_-_96px)]">
-            <Image src={product.cover} alt={product.title} fill className="object-contain" />
+            <Image src={product.cover_inner} alt={product.title} fill className="object-contain" />
             <div className="text-[54px] text-glow-30 absolute">{product.price}$</div>
           </div>
         </div>
