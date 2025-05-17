@@ -1,0 +1,26 @@
+<svg width="393" height="111" viewBox="0 0 393 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="blurShadow" x="-20" y="0" width="433" height="111" filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+            <feOffset dy="5"/>
+            <feComponentTransfer>
+                <feFuncA type="linear" slope="0.2"/>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <g filter="url(#blurShadow)">
+        <path
+                d="M306.279 100.085C330.543 93.9848 355.467 98.7253 380.223 98.7253C384.274 98.7253 388.552 98.6692 393 98.5713V0H-0.0000305176V96.5798L0.661835 96.5311C16.7491 95.3487 29.579 94.4057 46.8794 97.9008C72.9784 103.173 103.896 99.9494 130.471 99.9494C164.267 99.9494 195.055 97.9896 228.851 97.9896C244.405 97.9896 250.816 101.586 266.177 98.7253C279.886 96.1724 292.802 103.473 306.279 100.085Z"
+                fill="black" fill-opacity="0.2"/>
+
+        <path
+                d="M306.279 100.085C330.543 93.9848 355.467 98.7253 380.223 98.7253C384.274 98.7253 388.552 98.6692 393 98.5713V0H-0.0000305176V96.5798L0.661835 96.5311C16.7491 95.3487 29.579 94.4057 46.8794 97.9008C72.9784 103.173 103.896 99.9494 130.471 99.9494C164.267 99.9494 195.055 97.9896 228.851 97.9896C244.405 97.9896 250.816 101.586 266.177 98.7253C279.886 96.1724 292.802 103.473 306.279 100.085Z"
+                fill="#f4f2ef"/>
+    </g>
+</svg>
