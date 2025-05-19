@@ -50,8 +50,8 @@ export async function POST(req) {
       payment_method_types: ["card"],
       mode: "payment",
       line_items: lineItems,
-      success_url: `${req.nextUrl.origin}`,
-      cancel_url: `${req.nextUrl.origin}`
+      success_url: `${req.nextUrl.origin}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${req.nextUrl.origin}/bag`
     });
 
     return new Response(JSON.stringify({ url: session.url }), { status: 200 });

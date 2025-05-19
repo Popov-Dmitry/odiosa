@@ -21,6 +21,11 @@ export function CartProvider(props) {
     return cart.find((id) => id === item);
   };
 
+  const clearCart = () => {
+    localStorage.removeItem("cart");
+    setCart([]);
+  };
+
   useEffect(() => {
     if (isCartLoaded) {
       if (typeof window !== "undefined") {
@@ -39,7 +44,7 @@ export function CartProvider(props) {
   }, [cart, isCartLoaded]);
 
   return (
-    <CartStateContext.Provider value={{ cart, addItem, removeItem, isInCart, isCartLoaded }}>
+    <CartStateContext.Provider value={{ cart, addItem, removeItem, isInCart, clearCart, isCartLoaded }}>
       {children}
     </CartStateContext.Provider>
   );
