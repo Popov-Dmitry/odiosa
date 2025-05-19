@@ -1,5 +1,16 @@
 import React from "react";
 
+export async function generateMetadata() {
+  return {
+    title: "Odiosa – Privacy & Cookies Policy",
+    description: "Odiosa – Privacy & Cookies Policy",
+    openGraph: {
+      title: "Odiosa – Privacy & Cookies Policy",
+      url: "https://odiosa.vercel.app/privacy-and-cookies"
+    }
+  };
+}
+
 const PrivacyAndCookies = () => {
   return (
     <div

@@ -1,5 +1,16 @@
 import React from "react";
 
+export async function generateMetadata() {
+  return {
+    title: "Odiosa – Manifesto",
+    description: "Odiosa – Manifesto",
+    openGraph: {
+      title: "Odiosa – Manifesto",
+      url: "https://odiosa.vercel.app/manifesto"
+    }
+  };
+}
+
 const Manifesto = () => {
   return (
     <div className="relative lg:max-w-[1522px] lg:flex lg:justify-self-end mt-10 overflow-hidden">

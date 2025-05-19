@@ -4,6 +4,17 @@ import Spinner from "@/components/spinner";
 import Link from "next/link";
 import { getProducts } from "@/utils/db-requests-server";
 
+export async function generateMetadata() {
+  return {
+    title: "Odiosa – Collection",
+    description: "Odiosa – Collection",
+    openGraph: {
+      title: "Odiosa – Collection",
+      url: "https://odiosa.vercel.app/collection"
+    }
+  };
+}
+
 const Collection = async () => {
   const products = await getProducts();
 

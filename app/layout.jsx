@@ -5,7 +5,27 @@ import Footer from "@/components/footer";
 import { CartProvider } from "@/providers/cart-provider";
 
 export const metadata = {
-  title: "Odiosa"
+  title: "Odiosa – Home",
+  generator: "Next.js",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1
+    }
+  },
+  openGraph: {
+    title: "Odiosa – Home",
+    url: "https://odiosa.vercel.app/",
+    siteName: "Odiosa",
+    locale: "en_US",
+    type: "website"
+  }
 };
 
 const johnstemp = localFont({

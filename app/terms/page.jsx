@@ -1,5 +1,16 @@
 import React from "react";
 
+export async function generateMetadata() {
+  return {
+    title: "Odiosa – Terms of Use",
+    description: "Odiosa – Terms of Use",
+    openGraph: {
+      title: "Odiosa – Terms of Use",
+      url: "https://odiosa.vercel.app/terms"
+    }
+  };
+}
+
 const Terms = () => {
   return (
     <div className="pl-18 pr-5 pb-5 mt-10 flex flex-col gap-20 lg:max-w-[1522px] lg:px-20 lg:mt-20 lg:justify-self-end lg:gap-10">

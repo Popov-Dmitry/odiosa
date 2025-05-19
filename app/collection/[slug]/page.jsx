@@ -7,6 +7,17 @@ import OrderButton from "@/client-components/order-button";
 import Image from "next/image";
 import Link from "next/link";
 
+export async function generateMetadata({ params }) {
+  return {
+    title: `Odiosa – ${params.slug.toUpperCase().split("-").join(" ")}`,
+    description: `Odiosa – ${params.slug.toUpperCase().split("-").join(" ")}`,
+    openGraph: {
+      title: `Odiosa – ${params.slug.toUpperCase().split("-").join(" ")}`,
+      url: `https://odiosa.vercel.app/collection/${params.slug}`
+    }
+  };
+}
+
 const ProductCard = async ({ params, searchParams }) => {
   const { slug } = await params;
   const { color, size } = await searchParams;
