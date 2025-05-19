@@ -25,16 +25,6 @@ const Collection = async () => {
   return (
     <div>
       <div>
-        {/*<div className="lg:hidden">*/}
-        {/*  <div className="lg:fixed lg:w-1/2">*/}
-        {/*    <div className="px-2.5 text-[26px] text-glow-10 uppercase lg:absolute lg:left-0 lg:top-0 lg:px-0">*/}
-        {/*      {current.title}*/}
-        {/*    </div>*/}
-        {/*    <div className="mt-10 mx-8 h-[calc(100vh_-_240px_-_100px_-_120px)] relative">*/}
-        {/*      <Image src={current.cover} alt={current.title} fill />*/}
-        {/*    </div>*/}
-        {/*  </div>*/}
-        {/*</div>*/}
         <div className="mt-5 lg:mt-0 lg:px-10">
           <div className="px-2.5 text-[26px] text-glow-10 uppercase lg:hidden">Collection</div>
           <div className="mt-5 px-1.5 grid grid-cols-2 gap-5 lg:grid-cols-4 lg:gap-x-5 lg:gap-y-20 lg:relative">
@@ -87,16 +77,6 @@ const Collection = async () => {
           </div>
         </div>
       </div>
-
-      {/*<div className="lg:hidden mt-10 px-2.5">*/}
-      {/*  <div className="text-[26px] text-glow-10 uppercase">Product Details</div>*/}
-      {/*  <div className="text-xl text-glow-10">*/}
-      {/*    {current.description}*/}
-      {/*  </div>*/}
-      {/*  <img src={current.model_photo} alt="" />*/}
-      {/*  <img src={current.details_photo} alt="" />*/}
-      {/*</div>*/}
-      {/*<ContactTheManager className="mt-[60px] lg:hidden" />*/}
     </div>
   );
 };
