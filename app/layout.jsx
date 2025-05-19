@@ -18,6 +18,9 @@ const johnstemp = localFont({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${johnstemp.variable}`}>
+      <head>
+        <link rel="icon" href="/favicon.svg" sizes="any" />
+      </head>
       <body className="relative">
         <Header />
         <div
