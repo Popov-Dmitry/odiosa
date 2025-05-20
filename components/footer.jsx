@@ -1,15 +1,9 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
-import Input from "@/components/input";
-import Button from "@/components/button";
 import Link from "next/link";
-import useResponsive from "@/hooks/use-responsive";
+import NewsletterForm from "@/client-components/newsletter-form";
 
 const Footer = () => {
-  const { isMobile } = useResponsive()
-
   return (
     <div className="relative pb-9 lg:grid lg:grid-cols-2 text-shadow-[0_0_1.5px_#000000B2] lg:text-shadow-[0_0_2px_#000000B2] overflow-hidden">
       <div className="absolute top-0 -left-2 right-0 lg:hidden -z-10 overflow-hidden">
@@ -17,20 +11,7 @@ const Footer = () => {
           <Image src="/footer-mobile.svg" alt="" fill className="object-cover" />
         </div>
       </div>
-      <div className="pt-10 pl-3 pr-2 min-[550px]:pt-20 lg:px-10 lg:pt-0">
-        <div className="text-[26px] uppercase lg:text-2xl lg:normal-case">
-          Newsletter
-        </div>
-        <div className="flex flex-col gap-2.5 mt-10 lg:grid lg:grid-cols-2 lg:gap-4 lg:mt-2.5">
-          <Input placeholder="Email" className="lg:self-end" />
-          <Button
-            text="Subscribe"
-            variant={isMobile ? "primary" : "secondary"}
-            className="lg:!h-20 lg:!text-2xl"
-            imageClassName="lg:!h-20"
-          />
-        </div>
-      </div>
+      <NewsletterForm />
       <div className="mt-[58px] pl-3 pr-2 lg:hidden">
         <div className="relative w-full h-4">
           <Image src="/fotter-line-1.webp" alt="" fill />

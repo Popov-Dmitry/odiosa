@@ -5,7 +5,17 @@ import useResponsive from "@/hooks/use-responsive";
 import Image from "next/image";
 import clsx from "clsx";
 
-const Input = ({ variant, value, onChange, placeholder, disabled, textCenter, className, inputClassName }) => {
+const Input = ({
+  variant,
+  value,
+  onChange,
+  placeholder,
+  disabled,
+  textCenter,
+  className,
+  inputClassName,
+  type
+}) => {
   const { isMobile } = useResponsive();
 
   return (
@@ -21,6 +31,7 @@ const Input = ({ variant, value, onChange, placeholder, disabled, textCenter, cl
         onChange={onChange}
         placeholder={placeholder}
         disabled={disabled}
+        type={type}
       />
       <div className={clsx("relative w-full mt-2.5", isMobile ? "h-[9px]" : "h-1.5")}>
         <Image src={variant ? `/input-${variant}.webp` : isMobile ? "/input-mobile.webp" : "/input-desktop.webp"} alt="" fill />
