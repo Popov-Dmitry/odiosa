@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export async function generateMetadata() {
   return {
@@ -13,10 +14,9 @@ export async function generateMetadata() {
 
 const Manifesto = () => {
   return (
-    <div className="relative lg:max-w-[1522px] lg:flex lg:justify-self-end mt-10 overflow-hidden">
-      <div className="w-[calc(100%_+_300px)] lg:w-full h-full absolute z-10 pointer-events-none pl-2 lg:pl-4 lg:pr-7">
-        <img src="./list.svg" alt="" className="h-full w-full" />
-      </div>
+    <div className="relative w-[100vw] flex justify-center items-center lg:max-w-[1522px] lg:flex lg:justify-self-end mt-10 overflow-hidden">
+      <Image fill src="/manifest-mobile.svg" alt="" className="pl-2 z-10 pointer-events-none lg:hidden" />
+      <Image fill src="/manifest.svg" alt="" className="pl-4 pr-7 z-10 pointer-events-none hidden lg:block" />
       <div className="px-10">
         <div className="relative pl-14 pr-7 pb-20 mt-10 flex flex-col gap-20 lg:px-24 lg:max-w-[1522px] lg:mt-20 lg:pb-26 lg:justify-self-end lg:gap-10">
           <div className="max-w-[270px] text-[26px] uppercase text-glow-15 self-end lg:max-w-none lg:text-[54px] lg:text-glow-25 lg:self-start">
