@@ -27,7 +27,10 @@ export const getOtherProducts = async (currentSlug) => {
   const supabase = await createSupabaseServerClient();
   const { data } = await supabase.from("products")
     .select("slug, cover, title")
-    .not("slug", "eq" , currentSlug);
+    .not("slug", "eq" , currentSlug)
+    .order("title");
 
-  return data;
+  return Array.from(
+    new Map(data.map(item => [item.slug, item])).values()
+  );
 };
