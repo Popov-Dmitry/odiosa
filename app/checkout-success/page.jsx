@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Suspense } from "react";
 import CheckoutSuccessContent from "@/client-components/checkout-success-content";
+import Spinner from "@/components/spinner";
 
 export async function generateMetadata() {
   return {
@@ -13,7 +14,11 @@ export async function generateMetadata() {
 }
 
 const CheckoutSuccess = () => {
-  return <CheckoutSuccessContent />
+  return (
+    <Suspense fallback={<Spinner />}>
+      <CheckoutSuccessContent />
+    </Suspense>
+  )
 };
 
 export default CheckoutSuccess;
