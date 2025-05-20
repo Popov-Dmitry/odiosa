@@ -29,14 +29,14 @@ const HeaderMenu = () => {
         <Image src="/menu.webp" alt="menu" width={30} height={25} />
       </button>
       <div className={clsx(
-        "fixed top-16 left-0 z-[9999] w-full py-4 flex flex-col gap-4 text-2xl px-4 text-center bg-[var(--background)] duration-200",
+        "fixed top-p left-0 z-[-1] w-full h-full pt-16 pb-4 flex flex-col gap-4 text-2xl px-4 text-center bg-[var(--background)] duration-200",
         isOpen && "opacity-100",
         !isOpen && "opacity-0 pointer-events-none"
       )}>
         <div
-          className="absolute inset-0 z-0 opacity-50 mix-blend-multiply pointer-events-none"
+          className="absolute inset-0 z-0 opacity-80 mix-blend-multiply pointer-events-none contrast-50 brightness-125 lg:hidden"
           style={{
-            backgroundImage: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='black' opacity='0.4'><filter id='noiseFilter'><feTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='1' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23noiseFilter)'/></svg>")`,
+            backgroundImage: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='black' opacity='0.6'><filter id='noiseFilter'><feTurbulence type='turbulence' baseFrequency='1.5' numOctaves='2' stitchTiles='stitch'/><feFuncR type='discrete' tableValues='0 1'/><feFuncG type='discrete' tableValues='0 1'/><feFuncB type='discrete' tableValues='0 1'/></filter><rect width='100%' height='100%' filter='url(%23noiseFilter)'/></svg>")`,
             backgroundRepeat: "repeat",
             backgroundSize: "200px 200px"
           }}
