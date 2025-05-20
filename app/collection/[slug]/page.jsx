@@ -8,12 +8,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 export async function generateMetadata({ params }) {
+  const { slug } = await params;
   return {
-    title: `Odiosa – ${params.slug.toUpperCase().split("-").join(" ")}`,
-    description: `Odiosa – ${params.slug.toUpperCase().split("-").join(" ")}`,
+    title: `Odiosa – ${slug.toUpperCase().split("-").join(" ")}`,
+    description: `Odiosa – ${slug.toUpperCase().split("-").join(" ")}`,
     openGraph: {
-      title: `Odiosa – ${params.slug.toUpperCase().split("-").join(" ")}`,
-      url: `https://odiosa.vercel.app/collection/${params.slug}`
+      title: `Odiosa – ${slug.toUpperCase().split("-").join(" ")}`,
+      url: `https://odiosa.vercel.app/collection/${slug}`
     }
   };
 }
