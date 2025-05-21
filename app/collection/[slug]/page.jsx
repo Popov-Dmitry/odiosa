@@ -166,7 +166,7 @@ const ProductCard = async ({ params, searchParams }) => {
           </div>
         )}
       </div>
-      <ContactTheManager className="mt-[60px] lg:mt-0" />
+      <ContactTheManager title={product.title} className="mt-[60px] lg:mt-0" />
     </div>
   );
 };

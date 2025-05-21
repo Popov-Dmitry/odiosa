@@ -1,10 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import Input from "@/components/input";
-import Button from "@/components/button";
 import clsx from "clsx";
+import ContactTheManagerForm from "@/client-components/contact-the-manager-form";
 
-const ContactTheManager = ({ className }) => {
+const ContactTheManager = ({ title, className }) => {
   return (
     <div className={clsx(className)}>
       <div className="relative w-full h-4 lg:h-8">
@@ -20,12 +19,7 @@ const ContactTheManager = ({ className }) => {
           <br /><br />
           Or you can contact the manager to clarify the details and send the data to him, and we will fit the clothes to you.
         </div>
-        <div className="mt-10 flex flex-col gap-5 lg:mt-[165px] lg:gap-8 lg:w-[910px]">
-          <Input variant="mobile" placeholder="Name" textCenter inputClassName="lg:text-[44px]" />
-          <Input variant="mobile" placeholder="Email" textCenter inputClassName="lg:text-[44px]" />
-        </div>
-        <Button text="Contact the manager" className="mt-10 lg:hidden" />
-        <Button text="submit" className="hidden lg:block mt-10 !w-[910px]" />
+        <ContactTheManagerForm title={title} />
       </div>
       <div className="hidden lg:block relative w-full h-8">
         <Image src="/contact-line-2.webp" alt="" fill />
