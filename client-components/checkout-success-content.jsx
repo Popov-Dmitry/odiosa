@@ -43,7 +43,7 @@ const CheckoutSuccessContent = () => {
 
   if (status === "error") {
     return (
-      <div className="flex flex-col justify-center items-center gap-6 px-5 min-h-[calc(100vh_-_80px_-_591px_-_60px)] lg:min-h-[calc(100vh_-_96px_-_198px_-_120px)]">
+      <div className="flex flex-col justify-center items-center gap-6 px-5 min-h-[calc(100vh_-_80px_-_591px_-_60px)] lg:min-h-[calc(100vh_-_96px_-_158px_-_120px)]">
         <div className="text-6xl">Something went wrong</div>
         <Button href="/bag" text="Return to Bag" />
       </div>
@@ -51,7 +51,7 @@ const CheckoutSuccessContent = () => {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center gap-6 px-5 min-h-[calc(100vh_-_80px_-_591px_-_60px)] lg:min-h-[calc(100vh_-_96px_-_198px_-_120px)]">
+    <div className="flex flex-col justify-center items-center gap-6 px-5 min-h-[calc(100vh_-_80px_-_591px_-_60px)] lg:min-h-[calc(100vh_-_96px_-_158px_-_120px)]">
       <div className="text-6xl">Thank you for your purchase!</div>
       <Button href="/" text="Return to Home" />
     </div>

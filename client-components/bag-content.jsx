@@ -66,7 +66,7 @@ const BagContent = () => {
 
   if (cart.length === 0) {
     return (
-      <div className="flex items-center justify-center w-full px-5 min-h-[calc(100vh_-_80px_-_591px_-_60px)] lg:min-h-[calc(100vh_-_96px_-_198px_-_120px)]">
+      <div className="flex items-center justify-center w-full px-5 min-h-[calc(100vh_-_80px_-_591px_-_60px)] lg:min-h-[calc(100vh_-_96px_-_158px_-_120px)]">
         <div className="text-3xl text-glow-15 lg:text-5xl lg:text-glow-25 2xl:text-7xl 2xl:text-glow-30">
           Bag is empty
         </div>

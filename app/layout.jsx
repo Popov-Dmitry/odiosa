@@ -61,7 +61,7 @@ export default function RootLayout({ children }) {
           }}
         />
         <main className="relative z-10 pt-[80px] lg:pt-[96px] pb-[60px] lg:pb-[120px]">
-          <div className="min-h-[calc(100vh_-_80px_-_591px_-_60px)] lg:min-h-[calc(100vh_-_96px_-_198px_-_120px)]">
+          <div className="min-h-[calc(100vh_-_80px_-_591px_-_60px)] lg:min-h-[calc(100vh_-_96px_-_158px_-_120px)]">
             <CartProvider>
               {children}
             </CartProvider>
