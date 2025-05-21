@@ -53,7 +53,7 @@ export default function Home() {
               quality={100}
             />
           </div>
-          <div className="text-xl px-2.5">Nazvanie Pugovici, Pash</div>
+          <div className="text-xl px-2.5">Jewelry-grade silver buttons</div>
         </div>
         <div>
           <div className="mt-10 px-2.5 text-[26px]">
@@ -192,7 +192,7 @@ export default function Home() {
             organic evolution.
           </div>
           <div className="mt-[90%] xl:mt-[95%]">
-            <div>Nazvanie Pugovici, Pash</div>
+            <div>Jewelry-grade silver buttons</div>
             <div className="w-1/2 mt-[90px]">
               Artifacts embedded in the material-bone buttons hand-carved by a dedicated ivory craftsman, fossilized
               relics integrated into garment closures, signature metalwork developed in collaboration with OSSA
