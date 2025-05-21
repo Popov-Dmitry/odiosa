@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/third-parties": "^15.3.2",
     "@react-three/drei": "^10.0.6",
     "@react-three/fiber": "^9.1.2",
     "@supabase/ssr": "^0.6.1",
