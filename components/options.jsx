@@ -19,7 +19,9 @@ const Options = ({ colors, sizes, defaultColor, defaultSize, className }) => {
       const query = new URLSearchParams(searchParams.toString());
 
       Object.entries(params).forEach(([key, value]) => {
-        query.set(key, value);
+        if (value !== undefined) {
+          query.set(key, value);
+        }
       });
 
       return query.toString();
@@ -32,14 +34,19 @@ const Options = ({ colors, sizes, defaultColor, defaultSize, className }) => {
     setSize(searchParams.get("size") || defaultSize || sizes[0]);
   }, [searchParams]);
 
+  if (!colors?.length && !sizes?.length) {
+    return null;
+  }
+
   return (
     <div className={clsx(
-      "grid grid-rows-2 grid-flow-col items-center w-fit text-xl lg:text-[44px] text-glow-10 lg:text-glow-30",
+      "grid grid-flow-col items-center w-fit text-xl lg:text-[44px] text-glow-10 lg:text-glow-30",
+      colors?.length > 0 && sizes?.length > 0 ? "grid-rows-2" : "grid-rows-1",
       className
     )}>
-      <div className="mr-2">Color:</div>
-      <div>Size:</div>
-      {Array(Math.max(colors.length, sizes.length)).fill(1).map((_, i) => (
+      {colors?.length > 0 && <div className="mr-2">Color:</div>}
+      {sizes?.length > 0 && <div className="mr-2">Size:</div>}
+      {Array(Math.max((colors?.length || 0), (sizes?.length || 0))).fill(1).map((_, i) => (
         <React.Fragment key={i}>
           {i in colors ? (
             <div

@@ -47,13 +47,17 @@ const ProductCard = async ({ params, searchParams }) => {
               <Image src={product.cover_inner} alt={product.title} fill className="object-contain" />
             </div>
             <Options
-              colors={products.map((product) => product.color)}
-              sizes={product.sizes}
-              defaultSize={size ? size : product.sizes.includes("m") ? "m" : sizes[0]}
-              defaultColor={product.color}
+              colors={products.map((product) => product.color).filter((color) => !!color)}
+              sizes={product.sizes || []}
+              defaultSize={size ? size : product.sizes?.includes("m") ? "m" : (product.sizes?.length ? product.sizes[0] : undefined)}
+              defaultColor={product?.color}
               className="mt-10"
             />
-            <OrderButton className="mt-8" id={product.id} size={size ? size : product.sizes.includes("m") ? "m" : sizes[0]} />
+            <OrderButton
+              className="mt-8"
+              id={product.id}
+              size={size ? size : product.sizes?.includes("m") ? "m" : (product.sizes?.length ? product.sizes[0] : undefined)}
+            />
           </div>
           <div className="mt-5 lg:mt-0">
             <div className="px-2.5 text-[26px] text-glow-10 uppercase lg:hidden">Collection</div>
@@ -99,8 +103,18 @@ const ProductCard = async ({ params, searchParams }) => {
               <div className="text-[44px] text-glow-30 text-right">
                 Material: {product.material}
               </div>
-              <Options colors={products.map((product) => product.color)} sizes={product.sizes} defaultSize="m" className="mt-5" />
-              <OrderButton className="mt-[60px]" id={product.id} size={size ? size : product.sizes.includes("m") ? "m" : sizes[0]} />
+              <Options
+                colors={products.map((product) => product.color).filter((color) => !!color)}
+                sizes={product.sizes || []}
+                defaultSize={size ? size : product.sizes?.includes("m") ? "m" : (product.sizes?.length ? product.sizes[0] : undefined)}
+                defaultColor={product?.color}
+                className="mt-5"
+              />
+              <OrderButton
+                className="mt-[60px]"
+                id={product.id}
+                size={size ? size : product.sizes?.includes("m") ? "m" : (product.sizes?.length ? product.sizes[0] : undefined)}
+              />
             </div>
           </div>
           <div className="relative flex justify-end h-[calc(100vh_-_60px_-_96px)]">

@@ -8,6 +8,7 @@ import Image from "next/image";
 import Checkbox from "@/components/checkbox";
 import Button from "@/components/button";
 import Link from "next/link";
+import { getCartId } from "@/utils/get-cart-id";
 
 const BagContent = () => {
   const { cart, removeItem, isCartLoaded } = useCart();
@@ -26,6 +27,20 @@ const BagContent = () => {
     if (data.url) {
       window.location.href = data.url;
     }
+  };
+
+  const getProductLink = (product) => {
+    let link = `/collection/${product.slug}`;
+    if (product.color) {
+      link += `?color=${product.color}`;
+      if (product.size) {
+        link += `&size=${product.size}`
+      }
+    } else if (product.size) {
+      link += `?size=${product.size}`;
+    }
+
+    return link;
   };
 
   useEffect(() => {
@@ -63,16 +78,16 @@ const BagContent = () => {
     <>
       <div className="lg:hidden flex flex-col px-2.5">
         {cartDetails.map((product, index) => (
-          <div key={`${product.id}-${product.size}`} className="w-full flex flex-col">
+          <div key={getCartId(product.id, product.size)} className="w-full flex flex-col">
             <div className="flex items-center justify-between gap-2">
               <Link
-                href={`/collection/${product.slug}?color=${product.color}&size=${product.size}`}
+                href={getProductLink(product)}
                 className="text-[26px] text-glow-10 uppercase !no-underline"
               >
                 {product.title}
               </Link>
               <button
-                onClick={() => removeItem(`${product.id}-${product.size}`)}
+                onClick={() => removeItem(getCartId(product.id, product.size))}
                 className="cursor-pointer"
               >
                 <Image src="/remove.svg" alt="" width={18} height={18} />
@@ -81,15 +96,19 @@ const BagContent = () => {
             <div className="grid grid-cols-3">
               <div className="flex flex-col justify-end">
                 <div className="text-xl text-glow-10">
-                  <div>Size: {product.size.toUpperCase()}</div>
-                  <br />
+                  {product.size && (
+                    <>
+                      <div>Size: {product.size.toUpperCase()}</div>
+                      <br />
+                    </>
+                  )}
                   <div>Material:</div>
                   <div>{product.material}</div>
                 </div>
                 <div className="mt-20 text-[26px] text-glow-10">${product.price}</div>
               </div>
               <Link
-                href={`/collection/${product.slug}?color=${product.color}&size=${product.size}`}
+                href={getProductLink(product)}
                 className="col-span-2 relative min-h-80 !no-underline"
               >
                 <Image src={product.cover} alt={product.title} fill className="object-contain py-2" />
@@ -128,12 +147,12 @@ const BagContent = () => {
       </div>
       <div className="hidden lg:flex flex-col gap-5 px-10">
         {cartDetails.map((product, index) => (
-          <div key={`${product.id}-${product.size}`}>
+          <div key={getCartId(product.id, product.size)}>
             <div className="grid grid-cols-2 gap-5">
               <div className="relative w-full min-h-56">
                 <button
                   className="text-2xl text-glow-15 underline cursor-pointer"
-                  onClick={() => removeItem(`${product.id}-${product.size}`)}
+                  onClick={() => removeItem(getCartId(product.id, product.size))}
                 >
                   Remove
                 </button>
@@ -143,13 +162,13 @@ const BagContent = () => {
                 <div className="text-[54px]">${product.price}</div>
                 <div>
                   <Link
-                    href={`/collection/${product.slug}?color=${product.color}&size=${product.size}`}
+                    href={getProductLink(product)}
                     className="text-[54px] uppercase !no-underline"
                   >
                     {product.title}
                   </Link>
                   <div className="mt-10 text-2xl text-glow-15">
-                    <div>Size: {product.size.toUpperCase()}</div>
+                    {product.size && <div>Size: {product.size.toUpperCase()}</div>}
                     <div>Material: {product.material}</div>
                   </div>
                 </div>

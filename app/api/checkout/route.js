@@ -18,21 +18,21 @@ export async function POST(req) {
     const { data: items, error } = await supabase
       .from("products")
       .select("id, title, price, cover")
-      .in("id", cart.map((item) => item.split("-")[0]));
+      .in("id", cart.map((item) => item.toString().split("-")[0]));
 
     if (error || !items) {
       throw new Error("Error fetching products");
     }
 
     const lineItems = cart.map((item) => {
-      const [id, size] = item.split("-");
+      const [id, size] = item.toString().split("-");
       const product = items.find((item) => item.id.toString() === id);
       if (product) {
         return {
           price_data: {
             currency: "eur",
             product_data: {
-              name: `${product.title}, ${size.toUpperCase()}`,
+              name: size ? `${product.title}, ${size.toUpperCase()}` : product.title,
               images: product.cover ? [product.cover] : undefined,
               metadata: {
                 productId: id.toString()
