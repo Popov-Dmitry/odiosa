@@ -40,11 +40,18 @@ const ProductCard = async ({ params, searchParams }) => {
               <div>{product.title}</div>
               <div>${product.price}</div>
             </div>
-            <div className="text-xl text-glow-10">
-              Material: {product.material}
-            </div>
+            {product.material && (
+              <div className="text-xl text-glow-10">
+                Material: {product.material}
+              </div>
+            )}
             <div className="mt-5 h-96 relative">
-              <Image src={product.cover_inner} alt={product.title} fill className="object-contain" />
+              <Image
+                src={product.cover_inner}
+                alt={product.title}
+                fill
+                className="object-contain"
+              />
             </div>
             <Options
               colors={products.map((product) => product.color).filter((color) => !!color)}
@@ -69,7 +76,12 @@ const ProductCard = async ({ params, searchParams }) => {
                   href={`/collection/${item.slug}`}
                 >
                   <div className="min-w-[80px] lg:w-full h-full flex items-center relative">
-                    <Image fill src={item.cover} alt={item.title} className="object-contain" />
+                    <Image
+                      fill
+                      src={item.cover}
+                      alt={item.title}
+                      className="object-contain"
+                    />
                   </div>
                   <div className="mt-auto whitespace-nowrap text-xs lg:text-2xl lg:text-glow-15 lg:pt-5 lg:whitespace-normal">
                     {item.title}
@@ -78,31 +90,44 @@ const ProductCard = async ({ params, searchParams }) => {
               ))}
             </div>
           </div>
-          <div className="mt-10 px-2.5">
-            <div className="text-[26px] text-glow-10 uppercase">Product Details</div>
-            <div className="text-xl text-glow-10">
-              {product.description}
+          {(product.description || product.details_photo || product.model_photo) && (
+            <div className="mt-10 px-2.5">
+              <div className="text-[26px] text-glow-10 uppercase">Product Details</div>
+              {product.description && (
+                <div className="text-xl text-glow-10">
+                  {product.description}
+                </div>
+              )}
             </div>
+          )}
+        </div>
+        {product.details_photo && (
+          <img src={product.details_photo} alt="" className="pl-[9px] pr-3.5" />
+        )}
+        {product.model_photo && (
+          <div className="mt-9 ml-[15px] mr-3.5">
+            <img src={product.model_photo} alt="" />
           </div>
-        </div>
-        <img src={product.details_photo} alt="" className="pl-[9px] pr-3.5" />
-        <div className="mt-9 ml-[15px] mr-3.5">
-          <img src={product.model_photo} alt="" />
-        </div>
+        )}
       </div>
+
       <div className="hidden lg:block pt-[30px]">
         <div className="grid grid-cols-2 gap-5 px-10 min-h-[calc(100vh_-_60px_-_96px)]">
           <div className="flex flex-col justify-between">
             <div>
               <div className="text-[54px] text-glow-30 uppercase">{product.title}</div>
-              <div className="text-[44px] text-glow-25 mt-16">
-                {product.description}
-              </div>
+              {product.description && (
+                <div className="text-[44px] text-glow-25 mt-16">
+                  {product.description}
+                </div>
+              )}
             </div>
             <div>
-              <div className="text-[44px] text-glow-30 text-right">
-                Material: {product.material}
-              </div>
+              {product.material && (
+                <div className="text-[44px] text-glow-30 text-right">
+                  Material: {product.material}
+                </div>
+              )}
               <Options
                 colors={products.map((product) => product.color).filter((color) => !!color)}
                 sizes={product.sizes || []}
@@ -118,19 +143,28 @@ const ProductCard = async ({ params, searchParams }) => {
             </div>
           </div>
           <div className="relative flex justify-end h-[calc(100vh_-_60px_-_96px)]">
-            <Image src={product.cover_inner} alt={product.title} fill className="object-contain" />
+            <Image
+              src={product.cover_inner}
+              alt={product.title}
+              fill
+              className="object-contain"
+            />
             <div className="text-[54px] text-glow-30 absolute">{product.price}$</div>
           </div>
         </div>
-        <div className="mt-32 px-10 flex justify-center">
-          <img src={product.model_photo} alt="" />
-        </div>
-        <div className="mt-20 pl-10">
-          <div className="text-[54px] text-glow-30">Details</div>
-          <div className="flex justify-center">
-            <img src={product.details_photo} alt="" />
+        {product.model_photo && (
+          <div className="mt-32 px-10 flex justify-center">
+            <img src={product.model_photo} alt="" />
           </div>
-        </div>
+        )}
+        {product.details_photo && (
+          <div className="mt-20 pl-10">
+            <div className="text-[54px] text-glow-30">Details</div>
+            <div className="flex justify-center">
+              <img src={product.details_photo} alt="" />
+            </div>
+          </div>
+        )}
       </div>
       <ContactTheManager className="mt-[60px] lg:mt-0" />
     </div>
