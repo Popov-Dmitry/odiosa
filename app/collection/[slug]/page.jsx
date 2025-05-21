@@ -14,7 +14,7 @@ export async function generateMetadata({ params }) {
     description: `Odiosa – ${slug.toUpperCase().split("-").join(" ")}`,
     openGraph: {
       title: `Odiosa – ${slug.toUpperCase().split("-").join(" ")}`,
-      url: `https://odiosa.vercel.app/collection/${slug}`
+      url: `https://odiosa.eu/collection/${slug}`
     }
   };
 }

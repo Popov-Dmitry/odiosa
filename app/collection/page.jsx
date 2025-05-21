@@ -10,7 +10,7 @@ export async function generateMetadata() {
     description: "Odiosa – Collection",
     openGraph: {
       title: "Odiosa – Collection",
-      url: "https://odiosa.vercel.app/collection"
+      url: "https://odiosa.eu/collection"
     }
   };
 }

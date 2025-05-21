@@ -6,7 +6,7 @@ export async function generateMetadata() {
     description: "Odiosa – Privacy & Cookies Policy",
     openGraph: {
       title: "Odiosa – Privacy & Cookies Policy",
-      url: "https://odiosa.vercel.app/privacy-and-cookies"
+      url: "https://odiosa.eu/privacy-and-cookies"
     }
   };
 }

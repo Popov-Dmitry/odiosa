@@ -22,7 +22,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Odiosa – Home",
-    url: "https://odiosa.vercel.app/",
+    url: "https://odiosa.eu/",
     siteName: "Odiosa",
     locale: "en_US",
     type: "website"

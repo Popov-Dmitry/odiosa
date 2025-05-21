@@ -6,7 +6,7 @@ export async function generateMetadata() {
     description: "Odiosa – Terms of Use",
     openGraph: {
       title: "Odiosa – Terms of Use",
-      url: "https://odiosa.vercel.app/terms"
+      url: "https://odiosa.eu/terms"
     }
   };
 }

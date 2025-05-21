@@ -8,7 +8,7 @@ export async function generateMetadata() {
     description: "Odiosa – Thank you for your purchase!",
     openGraph: {
       title: "Odiosa – Thank you for your purchase!",
-      url: "https://odiosa.vercel.app/checkout-success"
+      url: "https://odiosa.eu/checkout-success"
     }
   };
 }
