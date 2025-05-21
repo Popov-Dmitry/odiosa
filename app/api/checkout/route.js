@@ -50,6 +50,40 @@ export async function POST(req) {
       payment_method_types: ["card"],
       mode: "payment",
       line_items: lineItems,
+      shipping_address_collection: {
+        allowed_countries: [
+          "ES", // Spain
+          "FR", // France
+          "DE", // Germany
+          "IT", // Italy
+          "GB", // United Kingdom
+          "US", // United States
+          "CA", // Canada
+          "NL", // Netherlands
+          "BE", // Belgium
+          "CH", // Switzerland
+          "AT", // Austria
+          "PT", // Portugal
+          "DK", // Denmark
+          "SE", // Sweden
+          "NO", // Norway
+          "FI", // Finland
+          "GR", // Greece
+          "CZ", // Czech Republic
+          "PL", // Poland
+          "LT", // Lithuania
+          "LV", // Latvia
+          "EE", // Estonia
+          "GE", // Georgia
+          "JP", // Japan
+          "KR", // South Korea
+          "HK", // Hong Kong
+          "SG", // Singapore
+          "AU", // Australia
+          "IL", // Israel
+          "AE"  // United Arab Emirates
+        ]
+      },
       success_url: `${req.nextUrl.origin}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${req.nextUrl.origin}/bag`
     });
