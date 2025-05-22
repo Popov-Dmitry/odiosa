@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import OrderButton from "@/client-components/order-button";
 import Image from "next/image";
 import Link from "next/link";
+import ProductDetailsPhotos from "@/client-components/product-details-photos";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -101,14 +102,7 @@ const ProductCard = async ({ params, searchParams }) => {
             </div>
           )}
         </div>
-        {product.details_photo && (
-          <img src={product.details_photo} alt="" className="pl-[9px] pr-3.5" />
-        )}
-        {product.model_photo && (
-          <div className="mt-9 ml-[15px] mr-3.5">
-            <img src={product.model_photo} alt="" />
-          </div>
-        )}
+        <ProductDetailsPhotos product={product} />
       </div>
 
       <div className="hidden lg:block pt-[30px]">
@@ -152,19 +146,7 @@ const ProductCard = async ({ params, searchParams }) => {
             <div className="text-[54px] text-glow-30 absolute">{product.price}$</div>
           </div>
         </div>
-        {product.model_photo && (
-          <div className="mt-32 px-10 flex justify-center">
-            <img src={product.model_photo} alt="" />
-          </div>
-        )}
-        {product.details_photo && (
-          <div className="mt-20 pl-10">
-            <div className="text-[54px] text-glow-30">Details</div>
-            <div className="flex justify-center">
-              <img src={product.details_photo} alt="" />
-            </div>
-          </div>
-        )}
+        <ProductDetailsPhotos product={product} />
       </div>
       <ContactTheManager title={product.title} className="mt-[60px] lg:mt-0" />
     </div>
