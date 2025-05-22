@@ -8,18 +8,33 @@ const ProductDetailsPhotos = ({ product }) => {
   const { isMobile } = useResponsive();
 
   if (isMobile) {
-    return (
-      <>
-        {product?.mobile_photos?.map((photo, index) => (
-          <div
-            key={photo}
-            className={clsx("ml-[15px] mr-3.5", index > 0 && "mt-9")}
-          >
-            <img src={photo} alt="" />
-          </div>
-        ))}
-      </>
-    );
+    if (product?.mobile_photos && product?.mobile_photos?.length > 0) {
+      return (
+        <>
+          {product?.mobile_photos?.map((photo, index) => (
+            <div
+              key={photo}
+              className={clsx("ml-[15px] mr-3.5", index > 0 && "mt-9")}
+            >
+              <img src={photo} alt="" />
+            </div>
+          ))}
+        </>
+      );
+    } else {
+      return (
+        <>
+          {product?.details_photo && (
+            <img src={product.details_photo} alt="" className="pl-[9px] pr-3.5" />
+          )}
+          {product?.model_photo && (
+            <div className="mt-9 ml-[15px] mr-3.5">
+              <img src={product.model_photo} alt="" />
+            </div>
+          )}
+        </>
+      )
+    }
   }
 
   return (
