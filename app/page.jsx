@@ -140,7 +140,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <Button text="WATCH COLLECTION" href="/collection" />
+            <Button text="see collection" href="/collection" />
           </div>
         </div>
         <div className="mt-5 px-2.5 text-[26px]">
@@ -240,7 +240,7 @@ export default function Home() {
           <div className="relative max-h-[370px] max-w-full aspect-[940/370]">
             <Image src="/pieces.webp" alt="Pieces" fill quality={100} />
           </div>
-          <Button text="WATCH COLLECTION" href="/collection" />
+          <Button text="see collection" href="/collection" />
         </div>
         <div className="relative w-full aspect-[2014/3227] flex flex-col">
           <div className="w-[793px] mx-10">
