@@ -17,7 +17,7 @@ export async function POST(req) {
 
     const { data: items, error } = await supabase
       .from("products")
-      .select("id, title, price, cover")
+      .select("id, title, price, cover, color_label")
       .in("id", cart.map((item) => item.toString().split("-")[0]));
 
     if (error || !items) {
@@ -32,7 +32,7 @@ export async function POST(req) {
           price_data: {
             currency: "eur",
             product_data: {
-              name: size ? `${product.title}, ${size.toUpperCase()}` : product.title,
+              name: `${product.title}${size ? `, ${size.toUpperCase()}` : ""}${product?.color_label ? `, ${product.color_label}` : ""}`,
               images: product.cover ? [product.cover] : undefined,
               metadata: {
                 productId: id.toString()
