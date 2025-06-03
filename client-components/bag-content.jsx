@@ -34,7 +34,7 @@ const BagContent = () => {
     if (product.color) {
       link += `?color=${product.color}`;
       if (product.size) {
-        link += `&size=${product.size}`
+        link += `&size=${product.size}`;
       }
     } else if (product.size) {
       link += `?size=${product.size}`;
@@ -104,6 +104,13 @@ const BagContent = () => {
                   )}
                   <div>Material:</div>
                   <div>{product.material}</div>
+                  {product.color_label && (
+                    <>
+                      <br />
+                      <div>Color:</div>
+                      <div>{product.color_label}</div>
+                    </>
+                  )}
                 </div>
                 <div className="mt-20 text-[26px] text-glow-10">${product.price}</div>
               </div>
@@ -130,7 +137,8 @@ const BagContent = () => {
           <Checkbox checked={termsAccepted} onChange={setTermsAccepted}>
             <div className="w-full flex justify-end text-base text-glow-10">
               <div className="w-[300px] sm:w-full">
-                By selecting this box, I agree to the full terms and conditions of purchase and acknowledge that my order.
+                By selecting this box, I agree to the full terms and conditions of purchase and acknowledge that my
+                order.
               </div>
             </div>
           </Checkbox>
@@ -170,6 +178,9 @@ const BagContent = () => {
                   <div className="mt-10 text-2xl text-glow-15">
                     {product.size && <div>Size: {product.size.toUpperCase()}</div>}
                     <div>Material: {product.material}</div>
+                    {product.color_label && (
+                      <div>Color: {product.color_label}</div>
+                    )}
                   </div>
                 </div>
               </div>
